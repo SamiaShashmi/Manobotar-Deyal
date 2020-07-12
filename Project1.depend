@@ -1,0 +1,102 @@
+# depslib dependency file v1.0
+1584807513 source:c:\users\user\documents\third semester\object oriented programming lab\project1\src\donee.cpp
+	"Donee.h"
+
+1584807512 c:\users\user\documents\third semester\object oriented programming lab\project1\include\donee.h
+
+1584807484 source:c:\users\user\documents\third semester\object oriented programming lab\project1\src\doner.cpp
+	"Doner.h"
+
+1584807484 c:\users\user\documents\third semester\object oriented programming lab\project1\include\doner.h
+
+1584807461 source:c:\users\user\documents\third semester\object oriented programming lab\project1\src\manager.cpp
+	"Manager.h"
+
+1584807461 c:\users\user\documents\third semester\object oriented programming lab\project1\include\manager.h
+
+1584808628 source:c:\users\user\documents\third semester\object oriented programming lab\project1\main.cpp
+	<iostream>
+	"Person.h"
+
+1584808791 c:\users\user\documents\third semester\object oriented programming lab\project1\include\person.h
+	<bits/stdc++.h>
+
+1584808628 source:c:\users\user\documents\third semester\object oriented programming lab\project\project1\main.cpp
+	<iostream>
+	"Person.h"
+
+1584810007 c:\users\user\documents\third semester\object oriented programming lab\project\project1\include\person.h
+	<bits/stdc++.h>
+
+1584807513 source:c:\users\user\documents\third semester\object oriented programming lab\project\project1\src\donee.cpp
+	"Donee.h"
+
+1584807512 c:\users\user\documents\third semester\object oriented programming lab\project\project1\include\donee.h
+
+1584807484 source:c:\users\user\documents\third semester\object oriented programming lab\project\project1\src\doner.cpp
+	"Doner.h"
+
+1584807484 c:\users\user\documents\third semester\object oriented programming lab\project\project1\include\doner.h
+
+1584807461 source:c:\users\user\documents\third semester\object oriented programming lab\project\project1\src\manager.cpp
+	"Manager.h"
+
+1584807461 c:\users\user\documents\third semester\object oriented programming lab\project\project1\include\manager.h
+
+1594567577 source:d:\third semester\object oriented programming lab\project\project1\main.cpp
+	<iostream>
+	"Person.h"
+	"Doner.h"
+	"Functions.h"
+
+1594567351 d:\third semester\object oriented programming lab\project\project1\include\person.h
+	<bits/stdc++.h>
+
+1584807513 source:d:\third semester\object oriented programming lab\project\project1\src\donee.cpp
+	"Donee.h"
+
+1594460349 d:\third semester\object oriented programming lab\project\project1\include\donee.h
+
+1594568200 source:d:\third semester\object oriented programming lab\project\project1\src\doner.cpp
+	"Doner.h"
+	"Person.h"
+	<bits/stdc++.h>
+	<iostream>
+	"Functions.h"
+
+1594567643 d:\third semester\object oriented programming lab\project\project1\include\doner.h
+	"Person.h"
+	"Functions.h"
+
+1584807461 source:d:\third semester\object oriented programming lab\project\project1\src\manager.cpp
+	"Manager.h"
+
+1594460354 d:\third semester\object oriented programming lab\project\project1\include\manager.h
+
+1594567567 source:d:\third semester\object oriented programming lab\project\project1\src\person.cpp
+	"Person.h"
+	<bits/stdc++.h>
+	"Doner.h"
+
+1594524834 d:\third semester\object oriented programming lab\project\project1\header.h
+
+1594565321 d:\third semester\object oriented programming lab\project\project1\include\header.h
+	"Person.h"
+	"Doner.h"
+
+1594528406 d:\third semester\object oriented programming lab\project\project1\include\start.h
+	"Donee.h"
+	"Doner.h"
+
+1594528407 source:d:\third semester\object oriented programming lab\project\project1\src\start.cpp
+	"Start.h"
+
+1594565730 d:\third semester\object oriented programming lab\project\project1\include\functions.h
+	"Person.h"
+	"Doner.h"
+
+1594568200 source:d:\third semester\object oriented programming lab\project\project1\src\functions.cpp
+	"Functions.h"
+	"Person.h"
+	"Doner.h"
+

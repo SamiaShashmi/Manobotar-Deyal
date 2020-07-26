@@ -2,7 +2,7 @@
 #define PERSON_H
 #include<bits/stdc++.h>
 using namespace std;
-
+void startMenu();
 class Person
 {
 public:
@@ -46,6 +46,7 @@ public:
     virtual void submenu();
 protected:
 
+    long int ID;
     string name;
     int age;
     string email;

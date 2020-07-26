@@ -8,8 +8,7 @@ using namespace std;
 
 long int Doner::stDonerID=12000;
 
-
-
+void startMenu();
 
 Doner::Doner()/*:DonerID(++stDonerID)*/
 {
@@ -27,10 +26,10 @@ Doner::Doner()/*:DonerID(++stDonerID)*/
 
 void Doner::signIn()
 {
-
-    //stDonerID=stDonerID+1;
-    //aDonerID=stDonerID;
+    long int ID;
      Person::signIn();
+     ID=++stDonerID;
+     setDonerID(ID);
      submenu();
     //Doner_StoreInFile();
 }
@@ -59,7 +58,7 @@ void Doner::submenu()
      }
      else if(donerchoice=='f')
      {
-
+            startMenu();
      }
  }
 /*void Doner::Doner_StoreInFile()
@@ -74,6 +73,7 @@ void Doner::submenu()
 void Doner::Show()
 {
     system("cls");
+    cout<<"ID : "<<getDonerID()<<endl;
     Person::Show();}
     //cout<<"\n\nID : "<<DonerID<<"\n
 /*void Doner::Doner_DisplayAll()

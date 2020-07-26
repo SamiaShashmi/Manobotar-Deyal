@@ -1,11 +1,14 @@
 #include "Person.h"
 #include<bits/stdc++.h>
+#include <conio.h>
+#include "windows.h"
 #include"Doner.h"
 using namespace std;
-
+void startMenu();
 Person::Person()
 {
     //ctor
+    password="";
 }
 
 void Person::display()
@@ -17,28 +20,31 @@ void Person::display()
 
 void Person::signIn()
 {
+    string Name;
+    int Age;
+    string Email;
+    string pass;
     system("cls");
     cout<<"Enter name : " ;
      cin.ignore();
-    getline(cin,name);
-    setName(name);
+    getline(cin,Name);
+    setName(Name);
     cout<<"Enter age : " ;
-    cin>>age;
-    setAge(age);
+    cin>>Age;
+    setAge(Age);
     cout<<"Enter email : " ;
-    cin>>email;
-    setEmail(email);
+    cin>>Email;
+    setEmail(Email);
     cout<<"Enter password : " ;
-    cin>>password;
-    setPassword(password);
-    string passwordConfirmation;
-    cout<<"Confirm password : ";
-    cin>>passwordConfirmation;
-    if(passwordConfirmation!=getPassword())
-    {
-        cout<<"Doesn't match";
-       Menu();
-    }
+    char ch;
+   ch = _getch(); //* will be shown without character
+   while(ch != 13){//character 13 is enter
+      pass.push_back(ch);
+      cout << '*';
+      ch = _getch();
+   }
+   cout<<endl;
+    setPassword(pass);
 }
 void Person::Menu()
 {

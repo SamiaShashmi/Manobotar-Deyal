@@ -10,6 +10,7 @@ void startMenu()
     char donerOrDoneeChoice;
    int personCount=0;
    system("color b");
+   system("cls");
    cout<<"\t\t\t\t\t***  Welcome to MANOBOTAR DEYAL  ***"<<endl;
    cout<<"\n\nEnter as :"<<endl;
    cout<<"a. Doner"<<endl;
@@ -19,7 +20,7 @@ void startMenu()
    if(donerOrDoneeChoice=='a')
    {
        person[personCount]=new Doner;
-       person[personCount]->signIn();
+       person[personCount]->Menu();
    }
 }
 

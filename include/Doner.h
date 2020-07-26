@@ -2,13 +2,13 @@
 #define DONER_H
 #include "Person.h"
 #include"Functions.h"
+void startMenu();
 
 class Doner:public Person
 {
     public:
         Doner();
         static long int stDonerID;
-        long int DonerID;
         void signIn();
         void Doner_StoreInFile();
         void Doner_ProfileDisplay();
@@ -16,14 +16,18 @@ class Doner:public Person
         void Doner_DisplayAll();
         void Menu();
         void submenu();
-        /*static long int getDonerID()
+        void setDonerID(int ID)
         {
-            return DonerID;
-        }*/
+            donerID=ID;
+        }
+        long int getDonerID()
+        {
+            return donerID;
+        }
     protected:
 
     private:
-
+        long int donerID;
 };
 
 #endif // DONER_H

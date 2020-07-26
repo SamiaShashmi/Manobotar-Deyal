@@ -3,7 +3,7 @@
 #include"Person.h"
 #include"Doner.h"
 
-void startMenu();
+//void startMenu();
 class Functions
 {
     public:

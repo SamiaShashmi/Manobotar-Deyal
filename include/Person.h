@@ -39,8 +39,11 @@ public:
     {
         return password;
     }
-    friend void startMenu();
-    void display();
+    virtual void signIn();
+    virtual void Menu();
+    virtual void display();
+    virtual void Show();
+    virtual void submenu();
 protected:
 
     string name;

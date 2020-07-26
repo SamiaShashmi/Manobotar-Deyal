@@ -8,23 +8,6 @@ using namespace std;
 
 long int Doner::stDonerID=12000;
 
-void startMenu()
-{
-    Doner doner[100000];
-    char donerOrDoneeChoice;
-   int donerCount=0;
-   system("color b");
-   cout<<"\t\t\t\t\t***  Welcome to MANOBOTAR DEYAL  ***"<<endl;
-   cout<<"\n\nEnter as :"<<endl;
-   cout<<"a. Doner"<<endl;
-   cout<<"b.Donee"<<endl;
-   cout<<"Enter your choice :";
-   cin>>donerOrDoneeChoice;
-   if(donerOrDoneeChoice=='a')
-   {
-       doner[donerCount].DonerMenu();
-   }
-}
 
 
 
@@ -36,71 +19,39 @@ Doner::Doner()/*:DonerID(++stDonerID)*/
     stDonerID++;*/
     //ctor
 }
- void Doner::DonerMenu()
+ void Doner::Menu()
  {
-     system("cls");
-     cout<<"\n\n1. Sign in :"<<endl;
-       cout<<"2. Log in :"<<endl;
-       int signOrLogInchoice;
-        cin>>signOrLogInchoice;
-    if(signOrLogInchoice==1)
-    {
-        Doner_Signin();
-    }
-    DonerView();
+     Person::Menu();
+    //DonerView();
  }
 
-void Doner::Doner_Signin()
+void Doner::signIn()
 {
-    system("cls");
-    stDonerID=stDonerID+1;
-    DonerID=stDonerID;
-     cout<<"Enter name : " ;
-     cin.ignore();
-    getline(cin,name);
-    setName(name);
-    cout<<"Enter age : " ;
-    cin>>age;
-    setAge(age);
-    cout<<"Enter email : " ;
-    cin>>email;
-    setEmail(email);
-    cout<<"Enter password : " ;
-    cin>>password;
-    setPassword(password);
-    string passwordConfirmation;
-    cout<<"Confirm password : ";
-    cin>>passwordConfirmation;
-    if(passwordConfirmation!=getPassword())
-    {
-        cout<<"Doesn't match";
-        DonerMenu();
-    }
-    else
-    {
-        cout<<"Account created\n";
-    }
 
+    //stDonerID=stDonerID+1;
+    //aDonerID=stDonerID;
+     Person::signIn();
+     submenu();
     //Doner_StoreInFile();
 }
 
-void Doner::DonerView()
+void Doner::submenu()
  {
     // system("cls");
      cout<<"What do you want?"<<endl;
-     cout<<"a.View Profile"<<endl<<"b.View Doner List"<<endl<<"c.Upload Product"<<endl<<"d.Edit Product"<<endl<<"e.Delete Product"<<endl<<"f.Exit"<<endl;
+     cout<<"a.View Profile"<<endl<<"b.View Doner List"<<endl<<"c.Upload Product"<<endl<<"d.Edit Product"<<endl<<"e.Delete Product"<<endl<<"f.Log Out"<<endl;
      cout<<"Enter your choice : ";
      char donerchoice;
      cin>>donerchoice;
      if(donerchoice=='a')
      {
-        Doner_Show();
-        DonerView();
+        Show();
+        submenu();
      }
      else if(donerchoice=='b')
      {
        //  Doner_DisplayAll();
-         DonerView();
+         submenu();
      }
      else if(donerchoice=='c')
      {
@@ -108,7 +59,7 @@ void Doner::DonerView()
      }
      else if(donerchoice=='f')
      {
-        startMenu();
+
      }
  }
 /*void Doner::Doner_StoreInFile()
@@ -120,11 +71,11 @@ void Doner::DonerView()
     cout<<"Account created";
 }*/
 
-void Doner::Doner_Show()
+void Doner::Show()
 {
     system("cls");
-    cout<<"\n\nID : "<<DonerID<<"\nName: "<<getName()<<"\nAge: "<<getAge()<<"\nEmail: "<<getEmail()<<endl;
-}
+    Person::Show();}
+    //cout<<"\n\nID : "<<DonerID<<"\n
 /*void Doner::Doner_DisplayAll()
 {*/
     /*ifstream file_doner;

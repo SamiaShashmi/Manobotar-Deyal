@@ -43,13 +43,14 @@
 
 1584807461 c:\users\user\documents\third semester\object oriented programming lab\project\project1\include\manager.h
 
-1594567577 source:d:\third semester\object oriented programming lab\project\project1\main.cpp
-	<iostream>
+1595727303 source:d:\third semester\object oriented programming lab\project\project1\main.cpp
+	<bits/stdc++.h>
+	<conio.h>
 	"Person.h"
 	"Doner.h"
 	"Functions.h"
 
-1594567351 d:\third semester\object oriented programming lab\project\project1\include\person.h
+1595727991 d:\third semester\object oriented programming lab\project\project1\include\person.h
 	<bits/stdc++.h>
 
 1584807513 source:d:\third semester\object oriented programming lab\project\project1\src\donee.cpp
@@ -57,14 +58,14 @@
 
 1594460349 d:\third semester\object oriented programming lab\project\project1\include\donee.h
 
-1594568200 source:d:\third semester\object oriented programming lab\project\project1\src\doner.cpp
+1595726954 source:d:\third semester\object oriented programming lab\project\project1\src\doner.cpp
 	"Doner.h"
 	"Person.h"
 	<bits/stdc++.h>
 	<iostream>
 	"Functions.h"
 
-1594567643 d:\third semester\object oriented programming lab\project\project1\include\doner.h
+1595727991 d:\third semester\object oriented programming lab\project\project1\include\doner.h
 	"Person.h"
 	"Functions.h"
 
@@ -73,7 +74,7 @@
 
 1594460354 d:\third semester\object oriented programming lab\project\project1\include\manager.h
 
-1594567567 source:d:\third semester\object oriented programming lab\project\project1\src\person.cpp
+1595727991 source:d:\third semester\object oriented programming lab\project\project1\src\person.cpp
 	"Person.h"
 	<bits/stdc++.h>
 	"Doner.h"
@@ -91,7 +92,7 @@
 1594528407 source:d:\third semester\object oriented programming lab\project\project1\src\start.cpp
 	"Start.h"
 
-1594565730 d:\third semester\object oriented programming lab\project\project1\include\functions.h
+1595713618 d:\third semester\object oriented programming lab\project\project1\include\functions.h
 	"Person.h"
 	"Doner.h"
 

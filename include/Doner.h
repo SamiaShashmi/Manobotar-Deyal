@@ -9,14 +9,13 @@ class Doner:public Person
         Doner();
         static long int stDonerID;
         long int DonerID;
-        void Doner_Signin();
+        void signIn();
         void Doner_StoreInFile();
         void Doner_ProfileDisplay();
-        void Doner_Show();
+        void Show();
         void Doner_DisplayAll();
-        void DonerMenu();
-        void DonerView();
-        friend void startMenu();
+        void Menu();
+        void submenu();
         /*static long int getDonerID()
         {
             return DonerID;

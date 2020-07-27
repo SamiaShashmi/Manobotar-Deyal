@@ -11,11 +11,11 @@ class Doner:public Person
         static long int stDonerID;
         void signIn();
         void Doner_StoreInFile();
-        void Doner_ProfileDisplay();
-        void Show();
+        void displayProfile();
         void Doner_DisplayAll();
         void Menu();
         void submenu();
+        void productMenu();
         void setDonerID(int ID)
         {
             donerID=ID;

@@ -34,17 +34,27 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Blood.h" />
+		<Unit filename="include/Book.h" />
+		<Unit filename="include/Cloth.h" />
 		<Unit filename="include/Donee.h" />
 		<Unit filename="include/Doner.h" />
-		<Unit filename="include/Functions.h" />
 		<Unit filename="include/Manager.h" />
+		<Unit filename="include/MentalHealth.h" />
+		<Unit filename="include/Money.h" />
 		<Unit filename="include/Person.h" />
+		<Unit filename="include/Product.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Blood.cpp" />
+		<Unit filename="src/Book.cpp" />
+		<Unit filename="src/Cloth.cpp" />
 		<Unit filename="src/Donee.cpp" />
 		<Unit filename="src/Doner.cpp" />
-		<Unit filename="src/Functions.cpp" />
 		<Unit filename="src/Manager.cpp" />
+		<Unit filename="src/MentalHealth.cpp" />
+		<Unit filename="src/Money.cpp" />
 		<Unit filename="src/Person.cpp" />
+		<Unit filename="src/Product.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

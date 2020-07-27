@@ -44,7 +44,7 @@ void Doner::submenu()
      cin>>donerchoice;
      if(donerchoice=='a')
      {
-        Show();
+        displayProfile();
         submenu();
      }
      else if(donerchoice=='b')
@@ -54,7 +54,7 @@ void Doner::submenu()
      }
      else if(donerchoice=='c')
      {
-
+        productMenu();
      }
      else if(donerchoice=='f')
      {
@@ -70,11 +70,11 @@ void Doner::submenu()
     cout<<"Account created";
 }*/
 
-void Doner::Show()
+void Doner::displayProfile()
 {
     system("cls");
     cout<<"ID : "<<getDonerID()<<endl;
-    Person::Show();}
+    Person::displayProfile();}
     //cout<<"\n\nID : "<<DonerID<<"\n
 /*void Doner::Doner_DisplayAll()
 {*/
@@ -99,7 +99,7 @@ void Doner::Show()
 }*/
 
 
-void Doner::Doner_ProfileDisplay()
+void Doner::productMenu()
 {
-
+    Person::productMenu();
 }

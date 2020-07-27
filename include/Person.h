@@ -42,8 +42,9 @@ public:
     virtual void signIn();
     virtual void Menu();
     virtual void display();
-    virtual void Show();
+    virtual void displayProfile();
     virtual void submenu();
+    virtual void productMenu();
 protected:
 
     long int ID;

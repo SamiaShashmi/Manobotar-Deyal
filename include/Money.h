@@ -10,6 +10,7 @@ class Money
     protected:
 
     private:
+        double amount;
 };
 
 #endif // MONEY_H

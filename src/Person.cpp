@@ -58,11 +58,23 @@ void Person::Menu()
         signIn();
     }
 }
-void Person::Show()
+void Person::displayProfile()
 {
     cout<<"Name: "<<getName()<<"\nAge: "<<getAge()<<"\nEmail: "<<getEmail()<<endl;
 }
 void Person::submenu()
 {
 
+}
+void Person::productMenu()
+{
+    system("cls");
+    cout<<"Choose category :\n";
+    cout<<"a.Money\nb.Cloth\nc.Book\nd.Blood\ne.Mental Counseling\n";
+    cout<<"Choose category :";
+    char productChoice;
+    if(productChoice=='a')
+    {
+
+    }
 }

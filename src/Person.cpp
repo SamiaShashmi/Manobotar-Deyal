@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "windows.h"
 #include"Doner.h"
+#include "Donee.h"
 using namespace std;
 void startMenu();
 Person::Person()

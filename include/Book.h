@@ -1,6 +1,7 @@
 #ifndef BOOK_H
 #define BOOK_H
-
+#include"Product.h"
+#include<bits/stdc++.h>
 
 class Book
 {

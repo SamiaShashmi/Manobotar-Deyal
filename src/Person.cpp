@@ -2,9 +2,12 @@
 #include<bits/stdc++.h>
 #include <conio.h>
 #include "windows.h"
-#include"Doner.h"
+#include"Donor.h"
+#include"Product.h"
+#include"Money.h"
 using namespace std;
 void startMenu();
+void gotoxy(int x,int y);
 Person::Person()
 {
     //ctor
@@ -49,6 +52,7 @@ void Person::signIn()
 void Person::Menu()
 {
     system("cls");
+     gotoxy(65,15);
      cout<<"\n\n1. Sign in :"<<endl;
        cout<<"2. Log in :"<<endl;
        int signOrLogInchoice;
@@ -68,13 +72,17 @@ void Person::submenu()
 }
 void Person::productMenu()
 {
+    vector<Product*>product;
+    int productCount=0;
     system("cls");
     cout<<"Choose category :\n";
     cout<<"a.Money\nb.Cloth\nc.Book\nd.Blood\ne.Mental Counseling\n";
     cout<<"Choose category :";
     char productChoice;
+    cin>>productChoice;
     if(productChoice=='a')
     {
-
+        product.push_back(new Money);
+        product[productCount]->uploadProduct();
     }
 }

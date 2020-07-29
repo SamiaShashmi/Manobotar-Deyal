@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include"Product.h"
 enum clothType{Ladies,Gents};
 class Cloth
 {

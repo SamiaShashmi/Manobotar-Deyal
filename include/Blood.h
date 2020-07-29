@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 #ifndef BLOOD_H
 #define BLOOD_H
+#include"Product.h"
 using namespace std;
 
 class Blood

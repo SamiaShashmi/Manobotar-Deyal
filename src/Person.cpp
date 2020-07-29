@@ -3,6 +3,7 @@
 #include <conio.h>
 #include "windows.h"
 #include"Donor.h"
+#include "Donee.h"
 #include"Product.h"
 #include"Money.h"
 using namespace std;

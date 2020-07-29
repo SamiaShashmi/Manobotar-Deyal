@@ -2,6 +2,7 @@
 #include<conio.h>
 #include"Person.h"
 #include"Donor.h"
+#include"Donee.h"
 #include<iostream>
 #include<thread>
 #include<chrono>
@@ -54,6 +55,12 @@ void startMenu()
    if(donorOrDoneeChoice=='a')
    {
        person.push_back(new Donor);
+       person[personCount]->Menu();
+       personCount++;
+   }
+   else
+   {
+       person.push_back(new Donee);
        person[personCount]->Menu();
        personCount++;
    }

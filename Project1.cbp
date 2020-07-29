@@ -37,8 +37,9 @@
 		<Unit filename="include/Blood.h" />
 		<Unit filename="include/Book.h" />
 		<Unit filename="include/Cloth.h" />
+		<Unit filename="include/Date.h" />
 		<Unit filename="include/Donee.h" />
-		<Unit filename="include/Doner.h" />
+		<Unit filename="include/Donor.h" />
 		<Unit filename="include/Manager.h" />
 		<Unit filename="include/MentalHealth.h" />
 		<Unit filename="include/Money.h" />
@@ -48,8 +49,9 @@
 		<Unit filename="src/Blood.cpp" />
 		<Unit filename="src/Book.cpp" />
 		<Unit filename="src/Cloth.cpp" />
+		<Unit filename="src/Date.cpp" />
 		<Unit filename="src/Donee.cpp" />
-		<Unit filename="src/Doner.cpp" />
+		<Unit filename="src/Donor.cpp" />
 		<Unit filename="src/Manager.cpp" />
 		<Unit filename="src/MentalHealth.cpp" />
 		<Unit filename="src/Money.cpp" />

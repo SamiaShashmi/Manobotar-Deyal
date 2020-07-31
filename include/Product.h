@@ -2,6 +2,7 @@
 #define PRODUCT_H
 #include<bits/stdc++.h>
 #include"Date.h"
+using namespace std;
 enum Product_Type{Parmanent,Temporary};
 class Product
 {

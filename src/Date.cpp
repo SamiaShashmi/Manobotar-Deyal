@@ -1,4 +1,7 @@
 #include "Date.h"
+#include<iostream>
+
+using namespace std;
 
 Date::Date(int date,int month,int year)
 {

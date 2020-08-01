@@ -5,15 +5,15 @@
 class Date
 {
     public:
-        Date(int date,int month,int year);
-        int countLeapYears(Date d);
-        friend int countLeapYears(Date);
-    protected:
-
-    private:
+        Date();
         int d, m, y;
         const int monthDays[12] = {31, 28, 31, 30, 31, 30,
                            31, 31, 30, 31, 30, 31};
+    protected:
+
+    private:
+
+
 };
 
 #endif // DATE_H

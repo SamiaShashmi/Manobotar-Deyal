@@ -23,13 +23,12 @@ class Money:public Product
             return totalAmount;
         }
         void displayTotalAmount();
-
+        static long int stProductID;
     protected:
 
     private:
         double amount;
         double totalAmount;
-        int returnWithin;
 
 };
 

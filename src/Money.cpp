@@ -5,6 +5,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 double Money::stTotalAmount=0;
+long int Money::stProductID=21000;
 Money::Money()
 {
     //ctor
@@ -13,17 +14,31 @@ void Money::uploadProduct()
 {
     cout<<"Enter amount : ";
     double Amount;
-    int date,month,year,tdate,tmonth,tyear;
+    int date,month,year;
     cin>>Amount;
     setAmount(Amount);
     stTotalAmount = stTotalAmount + Amount;
     totalAmount = stTotalAmount;
-    cout<<"Enter today's date : (DD MM YYYY)"<<endl;
-    cin>>tdate>>tmonth>>tyear;
-    cout<<"Enter estmated date to return : (DD MM YYYY)"<<endl;
-    cin>>date>>month>>year;
+    ifstream fin;
+    fin.open("moneyCount.txt");
+    if(!fin)
+    {
+        stProductID=12000;
+    }
+    else{
+        while (fin) {
+        fin>>stProductID;
+    }
+    }
+
+    fin.close();
+    productID=++stProductID;
+    ofstream fout;
+    fout.open("moneyCount.txt");
+        fout << productID << endl;
+    fout.close();
     cout<<"\n\nUploaded...";
-//    type = "Temporary";
+    type = Temporary;
 }
 
 void Money::displayTotalAmount()

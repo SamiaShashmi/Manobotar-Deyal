@@ -6,6 +6,7 @@
 #include "Donee.h"
 #include"Product.h"
 #include"Money.h"
+#include "Donee.h"
 using namespace std;
 void startMenu();
 void gotoxy(int x,int y);
@@ -50,10 +51,11 @@ void Person::signIn()
    cout<<endl;
     setPassword(pass);
 }
+
+
 void Person::Menu()
 {
     system("cls");
-     gotoxy(65,15);
      cout<<"\n\n1. Sign in :"<<endl;
        cout<<"2. Log in :"<<endl;
        int signOrLogInchoice;
@@ -61,6 +63,10 @@ void Person::Menu()
     if(signOrLogInchoice==1)
     {
         signIn();
+    }
+    else if(signOrLogInchoice==2)
+    {
+        logIn();
     }
 }
 void Person::displayProfile()
@@ -87,3 +93,12 @@ void Person::productMenu()
         product[productCount]->uploadProduct();
     }
 }
+int Person::matchPassword(long int id,string pass)
+{
+
+}
+void Person::logIn()
+{
+
+}
+

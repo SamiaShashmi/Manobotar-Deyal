@@ -69,10 +69,10 @@ void startMenu()
 int main()
 {
 
-    string messege = " We cannot despair of humanity, since we ourselves are human beings. Albert Einstein.  ...";
+     string messege = " We cannot despair of humanity, since we ourselves are human beings. Albert Einstein.  ...";
      system("color F0");
      gotoxy(40,10);
-     print(messege,140);
+    print(messege,140);
     //Person person;
     char c;
 

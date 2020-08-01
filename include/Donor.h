@@ -9,9 +9,11 @@ class Donor:public Person
         Donor();
         static long int stDonorID;
         void signIn();
-        void Donor_StoreInFile();
+        void logIn();
+        int matchPassword(long int id,string pass);
+        void storeInFile();
         void displayProfile();
-        void Donor_DisplayAll();
+        void viewDonorList();
         void Menu();
         void submenu();
         void productMenu();

@@ -9,7 +9,12 @@ long int Donee:: stDoneeID = 14000;
 
 void startMenu();
 
-Donee::Donee()
+using namespace std;
+
+
+void startMenu();
+
+Donee::Donee()/*:DoneeID(++stDoneeID)*/
 {
 
 }
@@ -103,3 +108,41 @@ void Donee::productMenu()
 {
     Person::productMenu();
 }
+
+
+
+
+
+/*void Donee::Donee_StoreInFile()
+{
+    ofstream file_donee;
+    file_donee.open("Donee.txt", ios::app | ios::binary);
+    file_donee.write((char*)this, sizeof(*this));
+    file_donee.close();
+    cout<<"Account created";
+}*/
+
+
+/*void Donee::Donee_DisplayAll()
+{*/
+    /*ifstream file_donee;
+    file_donee.open("Donee.txt",ios::in | ios:: binary);
+    if(!file_donee)
+    {
+        cout<<"No Donee"<<endl;
+    }
+    else
+    {
+        file_donee.read((char*)this, sizeof(*this));
+        while(!file_donee.eof())
+        {
+            Donee_Show();
+            file_donee.read((char*)this, sizeof(*this));
+        }
+        file_donee.close();
+    }*/
+
+    /*cout<<stDonerID-14001;
+}*/
+
+

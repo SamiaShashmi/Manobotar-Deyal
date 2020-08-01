@@ -40,6 +40,8 @@ public:
         return password;
     }
     virtual void signIn();
+    virtual void logIn();
+    virtual int matchPassword(long int id,string pass);
     virtual void Menu();
     virtual void display();
     virtual void displayProfile();

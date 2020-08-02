@@ -32,7 +32,9 @@ int Product::getDifference(Date dt1, Date dt2)
 
 void Product::setRemainingDay(int Day,int Month,int Year)
         {
-            setDate(Day,Month,Year);
+            date.d=Day;
+            date.m=Month;
+            date.y=Year;
             time_t now;
             struct tm nowlocal;
             now = time(NULL);

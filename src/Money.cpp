@@ -17,8 +17,25 @@ void Money::uploadProduct()
     int date,month,year;
     cin>>Amount;
     setAmount(Amount);
+    ifstream fmn;
+    fmn.open("totalMoney.txt");
+    if(!fmn)
+    {
+        stTotalAmount=0;
+    }
+    else{
+        while (fmn) {
+        fmn>>stTotalAmount;
+    }
+    }
+
+    fmn.close();
     stTotalAmount = stTotalAmount + Amount;
     totalAmount = stTotalAmount;
+    ofstream fmut;
+    fmut.open("totalMoney.txt");
+    fmut << totalAmount << endl;
+    fmut.close();
     ifstream fin;
     fin.open("moneyCount.txt");
     if(!fin)

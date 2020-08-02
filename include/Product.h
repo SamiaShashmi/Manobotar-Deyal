@@ -8,12 +8,6 @@ class Product
     public:
         Product();
         virtual void uploadProduct();
-        void setDate(int Day,int Month,int Year)
-        {
-            date.d=Day;
-            date.m=Month;
-            date.y=Year;
-        }
         Date getDate()
         {
             return date;

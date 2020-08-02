@@ -148,7 +148,7 @@
 	<iostream>
 	"Functions.h"
 
-1596330700 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\person.cpp
+1596340701 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\person.cpp
 	"Person.h"
 	<bits/stdc++.h>
 	<conio.h>
@@ -159,15 +159,16 @@
 	"Money.h"
 	"Donee.h"
 	"Blood.h"
+	"Cloth.h"
 
-1596330667 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\blood.cpp
+1596343306 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\blood.cpp
 	"Blood.h"
 	"Product.h"
 	"Person.h"
 	"Donor.h"
 	<bits/stdc++.h>
 
-1596330566 d:\third semester\object oriented programming lab\project\manobotar deyal\include\blood.h
+1596338765 d:\third semester\object oriented programming lab\project\manobotar deyal\include\blood.h
 	<bits/stdc++.h>
 	"Product.h"
 
@@ -180,12 +181,12 @@
 	"Product.h"
 	<bits/stdc++.h>
 
-1596002612 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\cloth.cpp
+1596343306 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\cloth.cpp
 	"Cloth.h"
 	"Product.h"
 	<bits/stdc++.h>
 
-1596012834 d:\third semester\object oriented programming lab\project\manobotar deyal\include\cloth.h
+1596339281 d:\third semester\object oriented programming lab\project\manobotar deyal\include\cloth.h
 	<bits/stdc++.h>
 	"Product.h"
 
@@ -198,14 +199,14 @@
 	"Product.h"
 	<bits/stdc++.h>
 
-1596326855 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\money.cpp
+1596339361 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\money.cpp
 	"Money.h"
 	"Product.h"
 	"Person.h"
 	"Donor.h"
 	<bits/stdc++.h>
 
-1596322178 d:\third semester\object oriented programming lab\project\manobotar deyal\include\money.h
+1596339488 d:\third semester\object oriented programming lab\project\manobotar deyal\include\money.h
 	"Product.h"
 	"Donor.h"
 
@@ -214,14 +215,14 @@
 	"Date.h"
 	<iostream>
 
-1596327050 d:\third semester\object oriented programming lab\project\manobotar deyal\include\product.h
+1596338943 d:\third semester\object oriented programming lab\project\manobotar deyal\include\product.h
 	<bits/stdc++.h>
 	"Date.h"
 
-1596201305 d:\third semester\object oriented programming lab\project\manobotar deyal\include\donor.h
+1596335717 d:\third semester\object oriented programming lab\project\manobotar deyal\include\donor.h
 	"Person.h"
 
-1596315620 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\donor.cpp
+1596335717 source:d:\third semester\object oriented programming lab\project\manobotar deyal\src\donor.cpp
 	"Donor.h"
 	"Person.h"
 	<bits/stdc++.h>

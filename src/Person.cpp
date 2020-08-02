@@ -8,6 +8,7 @@
 #include"Money.h"
 #include "Donee.h"
 #include"Blood.h"
+#include"Cloth.h"
 using namespace std;
 void startMenu();
 void gotoxy(int x,int y);
@@ -91,6 +92,16 @@ void Person::productMenu()
     if(productChoice=='a')
     {
         product.push_back(new Money);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='b')
+    {
+        product.push_back(new Cloth);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='d')
+    {
+        product.push_back(new Blood);
         product[productCount]->uploadProduct();
     }
     else if(productChoice=='d')

@@ -20,6 +20,7 @@ class Blood:public Product
         static int stTotalBagABneg;
         static int stTotalBagOpos;
         static int stTotalBagOneg;
+        static long int stProductID;
         void setGroup(bloodGroup val) { Group = val; }
         void storeBagNoIntoFile(bloodGroup,int);
         int getBagNoFromFile(bloodGroup,int);

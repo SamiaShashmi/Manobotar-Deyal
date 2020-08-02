@@ -12,6 +12,7 @@ int Blood::stTotalBagABpos=0;
 int Blood::stTotalBagABneg=0;
 int Blood::stTotalBagOpos=0;
 int Blood::stTotalBagOneg=0;
+long int Blood::stProductID=22000;
 Blood::Blood()
 {
     //ctor
@@ -20,16 +21,67 @@ Blood::Blood()
 void Blood::uploadProduct()
 {
     bloodGroup g;
-    int bag,tbag;
-    cout<<"Enter group :";
-    scanf("%d",&g);
+    int bag,tbag,bg;
+    cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve";
+    cin>>bg;
+    if(bg==1)
+    {
+        g=A_positive;
+    }
+    else if(bg==2)
+    {
+        g=A_negative;
+    }
+    else if(bg==3)
+    {
+        g=B_positive;
+    }
+    else if(bg==4)
+    {
+        g=B_negative;
+    }
+    else if(bg==5)
+    {
+        g=O_positive;
+    }
+    else if(bg==6)
+    {
+        g=O_negative;
+    }
+    else if(bg==7)
+    {
+        g=AB_positive;
+    }
+    else if(bg==8)
+    {
+        g=AB_negative;
+    }
     setGroup(g);
+    fflush(stdin);
     cout<<"Enter number of bags :";
     cin>>bag;
-    tbag = totalBag[g]+getBagNoFromFile(g,bag);
+    tbag = bag+getBagNoFromFile(g,bag);
     totalBag[g]= tbag;
     storeBagNoIntoFile(g,tbag);
-
+    type = Parmanent;
+    ifstream fmn;
+    fmn.open("totalBag.txt");
+    if(!fmn)
+    {
+        stProductID=22000;
+    }
+    else{
+        while (fmn) {
+        fmn>>stProductID;
+    }
+    }
+    fmn.close();
+    productID=++stProductID;
+    ofstream fout;
+    fout.open("totalBag.txt");
+    fout << productID << endl;
+    fout.close();
+    cout<<"\n\nUploaded...";
 }
 
 int Blood::getBagNoFromFile(bloodGroup g,int bag)
@@ -40,7 +92,7 @@ int Blood::getBagNoFromFile(bloodGroup g,int bag)
         fmn.open("totalBagA+.txt");
         if(!fmn)
     {
-        stTotalBagApos=0;
+        stTotalBagApos=bag;
     }
     else{
         while (fmn) {

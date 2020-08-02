@@ -40,7 +40,7 @@ void Money::uploadProduct()
     fin.open("moneyCount.txt");
     if(!fin)
     {
-        stProductID=12000;
+        stProductID=21000;
     }
     else{
         while (fin) {

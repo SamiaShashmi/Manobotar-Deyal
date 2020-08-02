@@ -10,6 +10,7 @@ class Money:public Product
         Money();
         void uploadProduct();
         static double stTotalAmount;
+        static long int stProductID;
         void setAmount(int Amount)
         {
             amount = Amount;
@@ -23,7 +24,6 @@ class Money:public Product
             return totalAmount;
         }
         void displayTotalAmount();
-        static long int stProductID;
     protected:
 
     private:

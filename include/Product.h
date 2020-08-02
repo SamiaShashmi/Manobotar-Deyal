@@ -12,8 +12,14 @@ class Product
         {
             return date;
         }
-        int countLeapYears(Date d);
-        int getDifference(Date dt1, Date dt2);
+        void setReturnWithin()
+        {
+            returnWithin = date.getReturnWithin();
+        }
+        int getReturnWithin()
+        {
+            return returnWithin;
+        }
         static long int stProductID;
         void setRemainingDay(int Day,int Month,int Year);
     protected:

@@ -17,6 +17,9 @@ void Money::uploadProduct()
     int date,month,year;
     cin>>Amount;
     setAmount(Amount);
+    //setRemainingDay(date,month,year);
+    //setReturnWithin();
+    //cout<<getReturnWithin();
     ifstream fmn;
     fmn.open("totalMoney.txt");
     if(!fmn)

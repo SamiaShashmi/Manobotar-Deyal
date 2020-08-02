@@ -1,6 +1,7 @@
 #include "Cloth.h"
 #include"Product.h"
 #include<bits/stdc++.h>
+using namespace std;
 long int Cloth::stProductID=23000;
 int Cloth::stLadiesCount=0;
 int Cloth::stGentsCount=0;
@@ -47,7 +48,7 @@ void Cloth::uploadProduct()
    fout.open("totalCloth.txt");
         fout << productID << endl;
     fout.close();
-
+    type = Parmanent;
     cout<<"\n\nUploaded...";
 
 }

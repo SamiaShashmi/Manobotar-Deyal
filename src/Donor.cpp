@@ -138,7 +138,7 @@ int Donor::matchPassword(long int id,string pass)
         {
             if(donorID==id)
             {
-                if(Person::getPassword()==pass)
+                if(getPassword()==pass)
                 {
                     ifMatch=1;
                 }

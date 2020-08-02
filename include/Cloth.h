@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include"Product.h"
+using namespace std;
 enum clothType{Ladies,Gents};
 class Cloth:public Product
 {
@@ -13,11 +14,11 @@ class Cloth:public Product
         int getTotalClothFromFile(clothType,int);
         clothType getType()
         {
-            return type;
+            return cltype;
         }
         void setType(clothType c)
         {
-            type=c;
+            cltype=c;
         }
         int getAmount() { return amount; }
         void setAmount(float val) { amount = val; }
@@ -26,6 +27,6 @@ class Cloth:public Product
 
     private:
         int amount;
-        clothType type;
+        clothType cltype;
         map<clothType,int>totalCloth;
 };

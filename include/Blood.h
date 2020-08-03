@@ -12,6 +12,7 @@ class Blood:public Product
 
         bloodGroup getGroup() { return Group; }
         void uploadProduct();
+         void placeOrder();
         static int stTotalBagApos;
         static int stTotalBagAneg;
         static int stTotalBagBpos;
@@ -24,6 +25,7 @@ class Blood:public Product
         void setGroup(bloodGroup val) { Group = val; }
         void storeBagNoIntoFile(bloodGroup,int);
         int getBagNoFromFile(bloodGroup,int);
+        int checkBagNoFromFile(bloodGroup,int);
         int getNumBag()
         {
             return numBag;

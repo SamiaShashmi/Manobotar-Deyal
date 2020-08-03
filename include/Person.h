@@ -43,10 +43,9 @@ public:
     virtual void logIn();
     virtual int matchPassword(long int id,string pass);
     virtual void Menu();
-    virtual void display();
-    virtual void displayProfile();
+    void displayProfile();
     virtual void submenu();
-    virtual void productMenu();
+    void productMenu();
 protected:
 
     long int ID;

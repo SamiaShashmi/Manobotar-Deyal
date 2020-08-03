@@ -1,5 +1,11 @@
 #include "Donor.h"
 #include "Person.h"
+#include"Product.h"
+#include"Money.h"
+#include"Blood.h"
+#include"Cloth.h"
+#include"Book.h"
+#include"MentalHealth.h"
 #include<bits/stdc++.h>
 #include<iostream>
 #include <conio.h>
@@ -94,7 +100,7 @@ void Donor::submenu()
      }
      else if(donorchoice=='c')
      {
-        productMenu();
+        uploadProduct();
         submenu();
      }
      else if(donorchoice=='f')
@@ -114,7 +120,7 @@ void Donor::displayProfile()
 {
     //system("cls");
     cout<<"ID : "<<getDonorID()<<endl;
-    Person::displayProfile();
+    this->Person::displayProfile();
 }
 
 void Donor::viewDonorList()
@@ -148,7 +154,31 @@ int Donor::matchPassword(long int id,string pass)
         f.close();
         return ifMatch;
     }
-void Donor::productMenu()
+void Donor::uploadProduct()
 {
     Person::productMenu();
+    vector<Product*>product;
+    int productCount=0;
+    char productChoice;
+    cin>>productChoice;
+    if(productChoice=='a')
+    {
+        product.push_back(new Money);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='b')
+    {
+        product.push_back(new Cloth);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='d')
+    {
+        product.push_back(new Blood);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='d')
+    {
+        product.push_back(new Blood);
+        product[productCount]->uploadProduct();
+    }
 }

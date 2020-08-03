@@ -1,5 +1,11 @@
 #include "Donee.h"
 #include "Person.h"
+#include"Product.h"
+#include"Money.h"
+#include"Blood.h"
+#include"Cloth.h"
+#include"Book.h"
+#include"MentalHealth.h"
 #include<bits/stdc++.h>
 #include<iostream>
 
@@ -14,7 +20,7 @@ using namespace std;
 
 void startMenu();
 
-Donee::Donee()/*:DoneeID(++stDoneeID)*/
+Donee::Donee()
 {
 
 }
@@ -22,17 +28,33 @@ Donee::Donee()/*:DoneeID(++stDoneeID)*/
 void Donee::Menu()
 {
     Person::Menu();
-    //DoneeView();
 }
 
 void Donee::signIn()
 {
      long int ID;
      Person::signIn();
+      ifstream fin;
+    fin.open("doneeCount.txt");
+    if(!fin)
+    {
+        stDoneeID=14000;
+    }
+    else{
+        while (fin) {
+        fin>>stDoneeID;
+    }
+    }
+
+    fin.close();
      ID=++stDoneeID;
      setDoneeID(ID);
+     ofstream fout;
+    fout.open("doneeCount.txt");
+        fout << ID << endl;
+    fout.close();
+     //storeInFile();
      submenu();
-    //Donee_StoreInFile();
 }
 
 void Donee::submenu()
@@ -50,16 +72,16 @@ void Donee::submenu()
      }
      else if(doneechoice=='b')
      {
-       //  Doner_DisplayAll();
          submenu();
      }
      else if(doneechoice=='c')
      {
-        productMenu();
+
      }
      else if(doneechoice=='d')
      {
-
+        placeOrder();
+        submenu();
      }
      else if(doneechoice=='e')
      {
@@ -67,82 +89,39 @@ void Donee::submenu()
      }
  }
 
-/*void Donee::Donee_StoreInFile()
-{
-    ofstream file_donee;
-    file_donee.open("Donee.txt", ios::app | ios::binary);
-    file_donee.write((char*)this, sizeof(*this));
-    file_donee.close();
-    cout<<"Account created";
-}*/
-
 void Donee::displayProfile()
 {
-    system("cls");
+    //system("cls");
     cout<<"ID : "<<getDoneeID()<<endl;
-    Person::displayProfile();}
-    //cout<<"\n\nID : "<<DoneeID<<"\n
-/*void Donee::Donee_DisplayAll()
-{*/
-    /*ifstream file_donee;
-    file_donee.open("Donee.txt",ios::in | ios:: binary);
-    if(!file_donee)
-    {
-        cout<<"No Donee"<<endl;
-    }
-    else
-    {
-        file_donee.read((char*)this, sizeof(*this));
-        while(!file_donee.eof())
-        {
-            Donee_Show();
-            file_donee.read((char*)this, sizeof(*this));
-        }
-        file_donee.close();
-    }*/
-
-    /*cout<<stDonerID-14001;
-}*/
-
-void Donee::productMenu()
-{
-    Person::productMenu();
+    Person::displayProfile();
 }
 
-
-
-
-
-/*void Donee::Donee_StoreInFile()
+void Donee::placeOrder()
 {
-    ofstream file_donee;
-    file_donee.open("Donee.txt", ios::app | ios::binary);
-    file_donee.write((char*)this, sizeof(*this));
-    file_donee.close();
-    cout<<"Account created";
-}*/
-
-
-/*void Donee::Donee_DisplayAll()
-{*/
-    /*ifstream file_donee;
-    file_donee.open("Donee.txt",ios::in | ios:: binary);
-    if(!file_donee)
+    Person::productMenu();
+    vector<Product*>product2;
+    int productCount=0;
+    char productChoice;
+    cin>>productChoice;
+    if(productChoice=='a')
     {
-        cout<<"No Donee"<<endl;
+        product2.push_back(new Money);
+        product2[productCount]->placeOrder();
     }
-    else
+    else if(productChoice=='b')
     {
-        file_donee.read((char*)this, sizeof(*this));
-        while(!file_donee.eof())
-        {
-            Donee_Show();
-            file_donee.read((char*)this, sizeof(*this));
-        }
-        file_donee.close();
-    }*/
+        product2.push_back(new Cloth);
+        product2[productCount]->placeOrder();
+    }
+    else if(productChoice=='c')
+    {
 
-    /*cout<<stDonerID-14001;
-}*/
+    }
+    else if(productChoice=='d')
+    {
+         product2.push_back(new Blood);
+        product2[productCount]->placeOrder();
+    }
+}
 
 

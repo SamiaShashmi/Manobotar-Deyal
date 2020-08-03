@@ -1,7 +1,6 @@
 #include "Money.h"
 #include"Product.h"
 #include"Person.h"
-#include"Donor.h"
 #include<bits/stdc++.h>
 using namespace std;
 double Money::stTotalAmount=0;
@@ -59,6 +58,48 @@ void Money::uploadProduct()
     fout.close();
     cout<<"\n\nUploaded...";
     type = Temporary;
+}
+
+void Money::placeOrder()
+{
+    cout<<"Enter amount : ";
+    double Amount;
+    int date,month,year;
+    double available;
+    cin>>Amount;
+    setAmount(Amount);
+    cout<<"Enter estimated date to return(DD MM YYYY) :";
+    cin>>date>>month>>year;
+    setRemainingDay(date,month,year);
+    setReturnWithin();
+    //cout<<getReturnWithin();
+    ifstream fmn;
+    fmn.open("totalMoney.txt");
+    if(!fmn)
+    {
+        cout<<"Sorry,no money available."<<endl;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    if(available>=Amount)
+    {
+        ofstream fout;
+        fout.open("totalMoney.txt");
+        fout << available-Amount << endl;
+        fout.close();
+        cout<<"Order placed..."<<endl;
+    }
+    else
+    {
+        cout<<"Sorry,only "<<available<<"tk is available."<<endl;
+        placeOrder();
+    }
+    }
+
+    fmn.close();
+
 }
 
 void Money::displayTotalAmount()

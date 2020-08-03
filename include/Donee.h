@@ -8,12 +8,10 @@ class Donee:public Person
         Donee();
         static long int stDoneeID;
         void signIn();
-        void Donee_StoreInFile();
         void displayProfile();
-        void Donee_DisplayAll();
         void Menu();
         void submenu();
-        void productMenu();
+        void placeOrder();
         void setDoneeID(int ID)
         {
             doneeID=ID;

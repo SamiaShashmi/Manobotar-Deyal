@@ -6,13 +6,12 @@ Product::Product()
 {
     //ctor
 }
-void Product::uploadProduct()
-{
-
-}
 void Product::setRemainingDay(int Day,int Month,int Year)
 {
     date.setRemainingDay(Day,Month,Year);
 }
+void Product::placeOrder()
+{
 
+}
 

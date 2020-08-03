@@ -16,7 +16,7 @@ class Donor:public Person
         void viewDonorList();
         void Menu();
         void submenu();
-        void productMenu();
+        void uploadProduct();
         void setDonorID(int ID)
         {
             donorID=ID;

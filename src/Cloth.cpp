@@ -53,6 +53,39 @@ void Cloth::uploadProduct()
 
 }
 
+void Cloth::placeOrder()
+{
+    clothType t;
+    int am,tcloth,tp;
+    cout<<"Enter type :\n1.Ladies  2.Gents";
+    cin>>tp;
+    if(tp==1)
+    {
+        t=Ladies;
+    }
+    else if(tp==2)
+    {
+        t=Gents;
+    }
+    cout<<"Enter amount : ";
+    cin>>am;
+    int check = checkTotalClothFromFile(t,am);
+    if(check == -1)
+    {
+        cout<<"Sorry,no cloth is available"<<endl;
+    }
+    else if(check == 0)
+    {
+       cout<<"Order placed..."<<endl;
+    }
+    else
+    {
+        cout<<"Sorry,only "<<check<<" clothes are available."<<endl;
+        placeOrder();
+    }
+
+}
+
 int Cloth::getTotalClothFromFile(clothType t,int am)
 {
     ifstream fmn;
@@ -104,4 +137,56 @@ void Cloth::storeTotalClothIntoFile(clothType t,int am)
     fout << am << endl;
     fout.close();
    }
+}
+
+int Cloth::checkTotalClothFromFile(clothType t,int am)
+{
+    ifstream fmn;
+    int available;
+    if(t==Ladies)
+    {
+        fmn.open("totalLadiesCloth.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>am)
+    {
+        storeTotalClothIntoFile(t,available-am);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(t==Gents)
+    {
+        fmn.open("totalGentsCloth.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>am)
+    {
+        storeTotalClothIntoFile(t,available-am);
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    }
 }

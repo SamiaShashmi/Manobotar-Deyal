@@ -9,6 +9,7 @@ class Money:public Product
     public:
         Money();
         void uploadProduct();
+        void placeOrder();
         static double stTotalAmount;
         static long int stProductID;
         void setAmount(int Amount)

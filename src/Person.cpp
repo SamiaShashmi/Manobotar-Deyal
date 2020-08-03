@@ -18,12 +18,6 @@ Person::Person()
     password="";
 }
 
-void Person::display()
-    {
-        cout<<"Name : "<<getName()<<endl;
-        cout<<"Age : "<<getAge()<<endl;
-        cout<<"Email : "<<getEmail()<<endl;
-    }
 
 void Person::signIn()
 {
@@ -81,34 +75,9 @@ void Person::submenu()
 }
 void Person::productMenu()
 {
-    vector<Product*>product;
-    int productCount=0;
     system("cls");
     cout<<"Choose category :\n";
     cout<<"a.Money\nb.Cloth\nc.Book\nd.Blood\ne.Mental Counseling\n";
-    cout<<"Choose category :";
-    char productChoice;
-    cin>>productChoice;
-    if(productChoice=='a')
-    {
-        product.push_back(new Money);
-        product[productCount]->uploadProduct();
-    }
-    else if(productChoice=='b')
-    {
-        product.push_back(new Cloth);
-        product[productCount]->uploadProduct();
-    }
-    else if(productChoice=='d')
-    {
-        product.push_back(new Blood);
-        product[productCount]->uploadProduct();
-    }
-    else if(productChoice=='d')
-    {
-        product.push_back(new Blood);
-        product[productCount]->uploadProduct();
-    }
 }
 int Person::matchPassword(long int id,string pass)
 {

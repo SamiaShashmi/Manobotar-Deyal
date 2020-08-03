@@ -22,7 +22,7 @@ void Blood::uploadProduct()
 {
     bloodGroup g;
     int bag,tbag,bg;
-    cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve";
+    cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
     cin>>bg;
     if(bg==1)
     {
@@ -268,4 +268,252 @@ void Blood::storeBagNoIntoFile(bloodGroup g,int tbag)
     fout << tbag << endl;
     fout.close();
    }
+}
+
+void Blood::placeOrder()
+{
+    bloodGroup g;
+    int bag,tbag,bg;
+    cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
+    cin>>bg;
+    if(bg==1)
+    {
+        g=A_positive;
+    }
+    else if(bg==2)
+    {
+        g=A_negative;
+    }
+    else if(bg==3)
+    {
+        g=B_positive;
+    }
+    else if(bg==4)
+    {
+        g=B_negative;
+    }
+    else if(bg==5)
+    {
+        g=O_positive;
+    }
+    else if(bg==6)
+    {
+        g=O_negative;
+    }
+    else if(bg==7)
+    {
+        g=AB_positive;
+    }
+    else if(bg==8)
+    {
+        g=AB_negative;
+    }
+    cout<<"Enter number of bags :";
+    cin>>bag;
+    int check = checkBagNoFromFile(g,bag);
+    if(check == -1)
+    {
+        cout<<"Sorry,no bag is available."<<endl;
+    }
+    else if(check == 0)
+    {
+        cout<<"Order placed..."<<endl;
+    }
+    else
+    {
+        cout<<"Sorry,only "<<check<<" bags are available."<<endl;
+        placeOrder();
+    }
+}
+
+int Blood::checkBagNoFromFile(bloodGroup g,int bag)
+{
+    ifstream fmn;
+    int available;
+    if(g==A_positive)
+    {
+        fmn.open("totalBagA+.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==A_negative)
+    {
+        fmn.open("totalBagA-.txt");
+        if(!fmn)
+    {
+       return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+     if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==B_positive)
+    {
+        fmn.open("totalBagB+.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==B_negative)
+    {
+        fmn.open("totalBagB-.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+     if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==AB_positive)
+    {
+        fmn.open("totalBagAB+.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+     if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==AB_negative)
+    {
+        fmn.open("totalBagAB-.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==O_positive)
+    {
+        fmn.open("totalBagO+.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+    else if(g==O_negative)
+    {
+        fmn.open("totalBagO-.txt");
+        if(!fmn)
+    {
+        return -1;
+    }
+    else{
+        while (fmn) {
+        fmn>>available;
+    }
+    }
+    fmn.close();
+    if(available>bag)
+    {
+        storeBagNoIntoFile(g,available-bag);
+        return 0;
+    }
+    else
+    {
+        return available;
+    }
+    }
+
+
 }

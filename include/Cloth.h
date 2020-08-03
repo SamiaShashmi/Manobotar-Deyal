@@ -10,8 +10,10 @@ class Cloth:public Product
         static int stGentsCount;
         static long int stProductID;
         void uploadProduct();
+        void placeOrder();
         void storeTotalClothIntoFile(clothType t,int am);
         int getTotalClothFromFile(clothType,int);
+        int checkTotalClothFromFile(clothType t,int am);
         clothType getType()
         {
             return cltype;

@@ -5,7 +5,7 @@
 #include"Blood.h"
 #include"Cloth.h"
 #include"Book.h"
-#include"MentalHealth.h"
+#include"MentalCounselling.h"
 #include<bits/stdc++.h>
 #include<iostream>
 #include <conio.h>
@@ -179,6 +179,11 @@ void Donor::uploadProduct()
     else if(productChoice=='d')
     {
         product.push_back(new Blood);
+        product[productCount]->uploadProduct();
+    }
+    else if(productChoice=='e')
+    {
+        product.push_back(new MentalCounselling);
         product[productCount]->uploadProduct();
     }
 }

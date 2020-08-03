@@ -5,10 +5,16 @@ class Date
 {
     public:
         Date();
-        void setDate(int Day,int Month,int Year);
+        void setDate(int Day,int Month,int Year)
+        {
+            d=Day;
+            m=Month;
+            y=Year;
+        }
         int countLeapYears();
         void getDifference(Date dt1);
         void setRemainingDay(int Day,int Month,int Year);
+        int dayCountFromJanuary();
         int getReturnWithin()
         {
             return returnWithin;

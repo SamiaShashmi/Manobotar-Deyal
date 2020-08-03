@@ -45,5 +45,22 @@ void Date::setRemainingDay(int Day,int Month,int Year)
             dt1.m = cdt.mnth;
             dt1.y = cdt.yr;
             getDifference(dt1);
-        }
+}
+
+int Date::dayCountFromJanuary()
+{
+    Date dt;
+    dt.d = 1;
+    dt.m = 1;
+    dt.y = 2020;
+    int n1 = dt.y*365 + dt.d;
+    for (int i=0; i<dt.m - 1; i++)
+        n1 += dt.monthDays[i];
+    n1 += dt.countLeapYears();
+    int n2 = y*365 + d;
+    for (int i=0; i<m - 1; i++)
+        n2 += dt.monthDays[i];
+    n2 += countLeapYears();
+    return n2-n1;
+}
 

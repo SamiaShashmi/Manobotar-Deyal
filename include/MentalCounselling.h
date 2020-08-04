@@ -8,6 +8,10 @@ class MentalCounselling:public Product
     public:
         MentalCounselling();
         void uploadProduct();
+        void placeOrder();
+        void displayCounsellorDetails();
+        void displayAvailableDates();
+        void createAppoinment();
         void setConsultantID(long int id)
         {
             consultantID = id;

@@ -41,7 +41,7 @@
 		<Unit filename="include/Donee.h" />
 		<Unit filename="include/Donor.h" />
 		<Unit filename="include/Manager.h" />
-		<Unit filename="include/MentalHealth.h" />
+		<Unit filename="include/MentalCounselling.h" />
 		<Unit filename="include/Money.h" />
 		<Unit filename="include/Person.h" />
 		<Unit filename="include/Product.h" />
@@ -53,7 +53,7 @@
 		<Unit filename="src/Donee.cpp" />
 		<Unit filename="src/Donor.cpp" />
 		<Unit filename="src/Manager.cpp" />
-		<Unit filename="src/MentalHealth.cpp" />
+		<Unit filename="src/MentalCounselling.cpp" />
 		<Unit filename="src/Money.cpp" />
 		<Unit filename="src/Person.cpp" />
 		<Unit filename="src/Product.cpp" />

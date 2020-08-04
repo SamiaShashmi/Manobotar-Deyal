@@ -122,6 +122,11 @@ void Donee::placeOrder()
          product2.push_back(new Blood);
         product2[productCount]->placeOrder();
     }
+    else if(productChoice=='e')
+    {
+         product2.push_back(new MentalCounselling);
+        product2[productCount]->placeOrder();
+    }
 }
 
 

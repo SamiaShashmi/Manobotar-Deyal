@@ -182,11 +182,11 @@ int Cloth::checkTotalClothFromFile(clothType t,int am)
     if(available>am)
     {
         storeTotalClothIntoFile(t,available-am);
-        return 1;
+        return 0;
     }
     else
     {
-        return 0;
+        return available;
     }
     }
 }

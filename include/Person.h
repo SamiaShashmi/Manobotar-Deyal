@@ -41,10 +41,10 @@ public:
     }
     virtual void signIn();
     virtual void logIn();
-    virtual int matchPassword(long int id,string pass);
+    virtual int matchPassword(long int id,string pass)=0;
     virtual void Menu();
     void displayProfile();
-    virtual void submenu();
+    virtual void submenu()=0;
     void productMenu();
 protected:
 

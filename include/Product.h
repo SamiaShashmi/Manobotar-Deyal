@@ -8,7 +8,7 @@ class Product
     public:
         Product();
         virtual void uploadProduct()=0;
-        virtual void placeOrder();
+        virtual void placeOrder()=0;
         Date getDate()
         {
             return date;

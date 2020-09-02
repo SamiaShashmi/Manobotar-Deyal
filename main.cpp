@@ -73,7 +73,7 @@ int main()
      system("color F0");
      gotoxy(40,10);
      print(messege,140);
-     Person person;
+//     Person person;
     char c;
 
     while(true)

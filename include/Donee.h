@@ -8,6 +8,7 @@ class Donee:public Person
         Donee();
         static long int stDoneeID;
         void signIn();
+        int matchPassword(long int id,string pass);
         void displayProfile();
         void Menu();
         void submenu();

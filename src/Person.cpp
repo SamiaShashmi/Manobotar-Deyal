@@ -69,20 +69,14 @@ void Person::displayProfile()
 {
     cout<<"Name: "<<getName()<<"\nAge: "<<getAge()<<"\nEmail: "<<getEmail()<<endl;
 }
-void Person::submenu()
-{
 
-}
 void Person::productMenu()
 {
     system("cls");
     cout<<"Choose category :\n";
     cout<<"a.Money\nb.Cloth\nc.Book\nd.Blood\ne.Mental Counselling\n";
 }
-int Person::matchPassword(long int id,string pass)
-{
 
-}
 void Person::logIn()
 {
 

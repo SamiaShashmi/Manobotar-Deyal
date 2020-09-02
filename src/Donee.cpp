@@ -129,4 +129,23 @@ void Donee::placeOrder()
     }
 }
 
-
+int Donee::matchPassword(long int id,string pass)
+    {
+        ifstream f;
+        int ifMatch=0;
+        f.open("Donee.dat",ios::in|ios::binary);
+        f.read((char*)this,sizeof(*this));
+        while(!f.eof())
+        {
+            if(doneeID==id)
+            {
+                if(getPassword()==pass)
+                {
+                    ifMatch=1;
+                }
+            }
+            f.read((char*)this,sizeof(*this));
+        }
+        f.close();
+        return ifMatch;
+    }

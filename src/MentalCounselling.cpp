@@ -40,7 +40,7 @@ void MentalCounselling::uploadProduct()
 
 void MentalCounselling::placeOrder()
 {
-    cout<<"1. Appoinment\n2.View Counsellor List\n3.Display available dates\n";
+    cout<<"1. Appoinment\n2.View Counsellor List\n3.Display available dates\n4.Exit\n";
     int counsellingChoice;
     cin>>counsellingChoice;
     if(counsellingChoice == 1)
@@ -51,9 +51,13 @@ void MentalCounselling::placeOrder()
     {
         displayCounsellorDetails();
     }
-    else
+    else if(counsellingChoice == 3)
     {
         displayAvailableDates();
+    }
+    else if(counsellingChoice == 4)
+    {
+        return;
     }
 }
 

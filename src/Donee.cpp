@@ -76,7 +76,8 @@ void Donee::submenu()
      }
      else if(doneechoice=='c')
      {
-
+        displayProduct();
+        submenu();
      }
      else if(doneechoice=='d')
      {
@@ -149,3 +150,218 @@ int Donee::matchPassword(long int id,string pass)
         f.close();
         return ifMatch;
     }
+
+void Donee::displayProduct()
+{
+    Person::productMenu();
+    char option;
+    cout << "Choose which product to be displayed:";
+    cin >> option;
+    if(option=='a')
+    {
+        ifstream fmoney("totalMoney.txt"); // open input file
+
+        if(!fmoney)
+        {
+            cout << "No money available.\n";
+            return ;
+        }
+        int i;
+
+        fmoney >> i;
+        cout << "Total Money Available:Tk." << i << endl;
+
+        fmoney.close();
+    }
+    else if(option=='b')
+    {
+        ifstream fgcloth("totalGentsCloth.txt"); // open input file
+
+        if(!fgcloth)
+        {
+            cout << "No cloths available.\n";
+            return ;
+        }
+        int i;
+
+        fgcloth >> i;
+        cout << "Total Number of Gents Cloth Available:" << i << endl;
+
+        fgcloth.close();
+
+        ifstream flcloth("totalLadiesCloth.txt"); // open input file
+
+        if(!flcloth)
+        {
+            cout << "No cloths available.\n";
+            return ;
+        }
+        int j;
+
+        flcloth >> j;
+        cout << "Total Number of Ladies Cloth Available:" << j << endl;
+
+        flcloth.close();
+    }
+    /*else if(option=='c')
+    {
+
+    }*/
+    else if(option=='d')
+    {
+        string group;
+        cout << "Enter Blood Group:";
+        cin >> group;
+
+        if(group=="A+")
+        {
+            ifstream fapos("totalBagA+.txt"); // open input file
+
+            if(!fapos)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fapos >> i;
+            cout << "Total Number of A+ bags:" << i << "Bags" << endl;
+
+            fapos.close();
+        }
+        else if(group=="A-")
+        {
+            ifstream faneg("totalBagA-.txt"); // open input file
+
+            if(!faneg)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            faneg >> i;
+            cout << "Total Number of A- bags:" << i << "Bags" << endl;
+
+            faneg.close();
+        }
+        else if(group=="B+")
+        {
+            ifstream fbpos("totalBagB+.txt"); // open input file
+
+            if(!fbpos)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fbpos >> i;
+            cout << "Total Number of B+ bags:" << i << "Bags" << endl;
+
+            fbpos.close();
+        }
+        else if(group=="B-")
+        {
+            ifstream fbneg("totalBagB-.txt"); // open input file
+
+            if(!fbneg)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fbneg >> i;
+            cout << "Total Number of B- bags:" << i << "Bags" << endl;
+
+            fbneg.close();
+        }
+        else if(group=="O+")
+        {
+            ifstream fopos("totalBagO+.txt"); // open input file
+
+            if(!fopos)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fopos >> i;
+            cout << "Total Number of O+ bags:" << i << "Bags" << endl;
+
+            fopos.close();
+        }
+        else if(group=="O-")
+        {
+            ifstream foneg("totalBagO-.txt"); // open input file
+
+            if(!foneg)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            foneg >> i;
+            cout << "Total Number of O- bags:" << i << "Bags" << endl;
+
+            foneg.close();
+        }
+        else if(group=="AB+")
+        {
+            ifstream fabpos("totalBagAB+.txt"); // open input file
+
+            if(!fabpos)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fabpos >> i;
+            cout << "Total Number of AB+ bags:" << i << "Bags" << endl;
+
+            fabpos.close();
+        }
+        else if(group=="AB-")
+        {
+            ifstream fabneg("totalBagAB-.txt"); // open input file
+
+            if(!fabneg)
+            {
+                cout << "No bags available.\n";
+                return ;
+            }
+            int i;
+
+            fabneg >> i;
+            cout << "Total Number of AB- bags:" << i << " Bags" << endl;
+
+            fabneg.close();
+        }
+    }
+    else if(option=='e')
+    {
+        ifstream fmcounsel("mentalCounsellingDetails.txt"); // open input file
+
+        if(!fmcounsel)
+        {
+            cout << "No counselor available.\n";
+            return ;
+        }
+
+        string str;
+        int i;
+        cout << "List of counselors:\n";
+        while(getline(fmcounsel,str))
+        {
+            fmcounsel >> i >> str;
+            cout << i << ' ' << str << endl;
+        }
+
+        fmcounsel.close();
+    }
+
+}

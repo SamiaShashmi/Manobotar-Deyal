@@ -20,6 +20,14 @@ class MentalCounselling:public Product
         {
             return consultantID;
         }
+        void setType()
+        {
+            type = Parmanent;
+        }
+        int getType()
+        {
+            return type;
+        }
     protected:
 
     private:

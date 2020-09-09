@@ -23,7 +23,7 @@ void Cloth::uploadProduct()
     {
         t=Gents;
     }
-    setType(t);
+    setClothType(t);
     fflush(stdin);
     cout<<"Enter amount :";
     cin>>am;

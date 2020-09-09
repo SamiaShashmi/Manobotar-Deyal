@@ -14,17 +14,24 @@ class Cloth:public Product
         void storeTotalClothIntoFile(clothType t,int am);
         int getTotalClothFromFile(clothType,int);
         int checkTotalClothFromFile(clothType t,int am);
-        clothType getType()
+        clothType getClothType()
         {
             return cltype;
         }
-        void setType(clothType c)
+        void setClothType(clothType c)
         {
             cltype=c;
         }
         int getAmount() { return amount; }
         void setAmount(float val) { amount = val; }
-
+        void setType()
+        {
+            type = Parmanent;
+        }
+        int getType()
+        {
+            return type;
+        }
     protected:
 
     private:

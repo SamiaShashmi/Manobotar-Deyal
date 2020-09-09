@@ -1,6 +1,7 @@
 #include "Money.h"
 #include"Product.h"
 #include"Person.h"
+#include"Date.h"
 #include<bits/stdc++.h>
 using namespace std;
 double Money::stTotalAmount=0;
@@ -16,9 +17,6 @@ void Money::uploadProduct()
     int date,month,year;
     cin>>Amount;
     setAmount(Amount);
-    //setRemainingDay(date,month,year);
-    //setReturnWithin();
-    //cout<<getReturnWithin();
     ifstream fmn;
     fmn.open("totalMoney.txt");
     if(!fmn)
@@ -64,16 +62,13 @@ void Money::placeOrder()
 {
     cout<<"Enter amount : ";
     double Amount;
-    int date,month,year;
+    int dte,month,year;
     double available;
     cin>>Amount;
     setAmount(Amount);
     cout<<"Enter estimated date to return(DD MM YYYY) :";
-    cin>>date>>month>>year;
-//    date.setDate(date,month,year);
-    //date.setRemainingDay(date,month,year);
-    setReturnWithin();
-    //cout<<getReturnWithin();
+    cin>>dte>>month>>year;
+    date.setRemainingDay(dte,month,year);
     ifstream fmn;
     fmn.open("totalMoney.txt");
     if(!fmn)
@@ -91,6 +86,7 @@ void Money::placeOrder()
         fout << available-Amount << endl;
         fout.close();
         cout<<"Order placed..."<<endl;
+        cout<<"You have to return within " << date.getReturnWithin() << " days.." << endl;
     }
     else
     {

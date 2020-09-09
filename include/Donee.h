@@ -7,7 +7,7 @@ class Donee:public Person
     public:
         Donee();
         static long int stDoneeID;
-        void signUp(long long int personCount);
+        void signUp(int personCount);
         void displayProfile();
         void submenu();
         void placeOrder();

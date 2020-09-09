@@ -24,6 +24,14 @@ class Money:public Product
         {
             return totalAmount;
         }
+        void setType()
+        {
+            type = Temporary;
+        }
+        int getType()
+        {
+            return type;
+        }
         void displayTotalAmount();
     protected:
 

@@ -10,7 +10,7 @@
 #include<iostream>
 
 using namespace std;
-
+extern unordered_map<int,long int>id_count;
 long int Donee:: stDoneeID = 14000;
 
 void startMenu();
@@ -26,11 +26,11 @@ Donee::Donee()
 }
 
 
-void Donee::signUp(long long int personCount)
+void Donee::signUp(int personCount)
 {
      long int ID;
-//     Person::signUp(long long int personCount);
-      ifstream fin;
+     Person::signUp(personCount);
+     ifstream fin;
     fin.open("doneeCount.txt");
     if(!fin)
     {
@@ -45,11 +45,20 @@ void Donee::signUp(long long int personCount)
     fin.close();
      ID=++stDoneeID;
      setDoneeID(ID);
+     id_count[personCount]=ID;
      ofstream fout;
     fout.open("doneeCount.txt");
         fout << ID << endl;
     fout.close();
-     //storeInFile();
+    ofstream fmut;
+    fmut.open("id_count.txt", std::ios::out | std::ios::app);
+    fmut << ID << " "<< personCount<< endl;
+    fmut.close();
+    ofstream fnut;
+    fnut.open("doneePassword.txt", std::ios::out | std::ios::app);
+    fnut << ID << " "<< getPassword()<< endl;
+    fnut.close();
+//     storeInFile();
      submenu();
 }
 

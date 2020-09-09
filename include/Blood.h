@@ -26,7 +26,14 @@ class Blood:public Product
         {
             numBag=bag;
         }
-
+        void setType()
+        {
+            type = Parmanent;
+        }
+        int getType()
+        {
+            return type;
+        }
     protected:
         bloodGroup Group;
         int numBag;

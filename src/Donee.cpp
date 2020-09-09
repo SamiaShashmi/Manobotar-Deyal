@@ -25,15 +25,11 @@ Donee::Donee()
 
 }
 
-void Donee::Menu()
-{
-    Person::Menu();
-}
 
-void Donee::signIn()
+void Donee::signUp(long long int personCount)
 {
      long int ID;
-     Person::signIn();
+//     Person::signUp(long long int personCount);
       ifstream fin;
     fin.open("doneeCount.txt");
     if(!fin)
@@ -128,24 +124,3 @@ void Donee::placeOrder()
         product2[productCount]->placeOrder();
     }
 }
-
-int Donee::matchPassword(long int id,string pass)
-    {
-        ifstream f;
-        int ifMatch=0;
-        f.open("Donee.dat",ios::in|ios::binary);
-        f.read((char*)this,sizeof(*this));
-        while(!f.eof())
-        {
-            if(doneeID==id)
-            {
-                if(getPassword()==pass)
-                {
-                    ifMatch=1;
-                }
-            }
-            f.read((char*)this,sizeof(*this));
-        }
-        f.close();
-        return ifMatch;
-    }

@@ -40,7 +40,6 @@
 		<Unit filename="include/Date.h" />
 		<Unit filename="include/Donee.h" />
 		<Unit filename="include/Donor.h" />
-		<Unit filename="include/Manager.h" />
 		<Unit filename="include/MentalCounselling.h" />
 		<Unit filename="include/Money.h" />
 		<Unit filename="include/Person.h" />
@@ -52,7 +51,6 @@
 		<Unit filename="src/Date.cpp" />
 		<Unit filename="src/Donee.cpp" />
 		<Unit filename="src/Donor.cpp" />
-		<Unit filename="src/Manager.cpp" />
 		<Unit filename="src/MentalCounselling.cpp" />
 		<Unit filename="src/Money.cpp" />
 		<Unit filename="src/Person.cpp" />

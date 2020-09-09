@@ -70,7 +70,8 @@ void Money::placeOrder()
     setAmount(Amount);
     cout<<"Enter estimated date to return(DD MM YYYY) :";
     cin>>date>>month>>year;
-    setRemainingDay(date,month,year);
+//    date.setDate(date,month,year);
+    //date.setRemainingDay(date,month,year);
     setReturnWithin();
     //cout<<getReturnWithin();
     ifstream fmn;

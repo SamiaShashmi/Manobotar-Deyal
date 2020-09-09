@@ -7,17 +7,13 @@ class Donor:public Person
 {
     public:
         Donor();
-        static long int stDonorID;
-        void signIn();
-        void logIn();
-        int matchPassword(long int id,string pass);
         void storeInFile();
+        void signUp(int personCount);
         void displayProfile();
         void viewDonorList();
-        void Menu();
         void submenu();
         void uploadProduct();
-        void setDonorID(int ID)
+        void setDonorID(long int ID)
         {
             donorID=ID;
         }
@@ -29,6 +25,7 @@ class Donor:public Person
 
     private:
         long int donorID;
+        static long int stDonorID;
 };
 
 #endif // DONER_H

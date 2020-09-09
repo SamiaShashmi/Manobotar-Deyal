@@ -39,10 +39,7 @@ public:
     {
         return password;
     }
-    virtual void signIn();
-    virtual void logIn();
-    virtual int matchPassword(long int id,string pass)=0;
-    virtual void Menu();
+    virtual void signUp(int personCount);
     void displayProfile();
     virtual void submenu()=0;
     void productMenu();

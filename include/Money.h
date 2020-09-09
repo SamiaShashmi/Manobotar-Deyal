@@ -30,7 +30,7 @@ class Money:public Product
     private:
         double amount;
         double totalAmount;
-
+        Date date;
 };
 
 #endif // MONEY_H

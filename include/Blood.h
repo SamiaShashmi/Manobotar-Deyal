@@ -13,15 +13,7 @@ class Blood:public Product
         bloodGroup getGroup() { return Group; }
         void uploadProduct();
          void placeOrder();
-        static int stTotalBagApos;
-        static int stTotalBagAneg;
-        static int stTotalBagBpos;
-        static int stTotalBagBneg;
-        static int stTotalBagABpos;
-        static int stTotalBagABneg;
-        static int stTotalBagOpos;
-        static int stTotalBagOneg;
-        static long int stProductID;
+
         void setGroup(bloodGroup val) { Group = val; }
         void storeBagNoIntoFile(bloodGroup,int);
         int getBagNoFromFile(bloodGroup,int);
@@ -40,6 +32,15 @@ class Blood:public Product
         int numBag;
         map<bloodGroup,int>totalBag;
     private:
+        static int stTotalBagApos;
+        static int stTotalBagAneg;
+        static int stTotalBagBpos;
+        static int stTotalBagBneg;
+        static int stTotalBagABpos;
+        static int stTotalBagABneg;
+        static int stTotalBagOpos;
+        static int stTotalBagOneg;
+        static long int stProductID;
 
 };
 

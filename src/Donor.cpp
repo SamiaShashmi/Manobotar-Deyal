@@ -10,7 +10,7 @@
 #include<iostream>
 #include <conio.h>
 using namespace std;
-
+extern unordered_map<int,long int>id_count;
 long int Donor::stDonorID=12000;
 
 void startMenu();
@@ -19,15 +19,12 @@ Donor::Donor()
 {
 
 }
- void Donor::Menu()
- {
-     Person::Menu();
- }
 
-void Donor::signIn()
+
+void Donor::signUp(int personCount)
 {
     long int ID;
-     Person::signIn();
+     Person::signUp(personCount);
      ifstream fin;
     fin.open("donorCount.txt");
     if(!fin)
@@ -43,41 +40,21 @@ void Donor::signIn()
     fin.close();
      ID=++stDonorID;
      setDonorID(ID);
+     id_count[personCount]=ID;
      ofstream fout;
     fout.open("donorCount.txt");
         fout << ID << endl;
     fout.close();
+    ofstream fmut;
+    fmut.open("id_count.txt", std::ios::out | std::ios::app);
+    fmut << ID << " "<< personCount<< endl;
+    fmut.close();
+    ofstream fnut;
+    fnut.open("donorPassword.txt", std::ios::out | std::ios::app);
+    fnut << ID << " "<< getPassword()<< endl;
+    fnut.close();
      storeInFile();
      submenu();
-}
-
-void Donor::logIn()
-{
-    int id;
-    char ch;
-    string pass;
-    cout<<"Enter ID : ";
-    cin>>id;
-    //fflush(stdin);
-    cout<<"Enter password : ";
-    ch = _getch(); //* will be shown without character
-   while(ch != 13){//character 13 is enter
-      pass.push_back(ch);
-      cout << '*';
-      ch = _getch();
-   }
-   cout<<endl;
-   int ifMatch = matchPassword(id,pass);
-   if(ifMatch==0)
-   {
-       cout<<"Wrong password!!"<<endl;
-       logIn();
-   }
-   else
-   {
-       submenu();
-   }
-   fflush(stdin);
 }
 
 void Donor::submenu()
@@ -134,26 +111,7 @@ void Donor::viewDonorList()
     }
     fin.close();
 }
-int Donor::matchPassword(long int id,string pass)
-    {
-        ifstream f;
-        int ifMatch=0;
-        f.open("Donor.dat",ios::in|ios::binary);
-        f.read((char*)this,sizeof(*this));
-        while(!f.eof())
-        {
-            if(donorID==id)
-            {
-                if(getPassword()==pass)
-                {
-                    ifMatch=1;
-                }
-            }
-            f.read((char*)this,sizeof(*this));
-        }
-        f.close();
-        return ifMatch;
-    }
+
 void Donor::uploadProduct()
 {
     Person::productMenu();

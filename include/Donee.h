@@ -7,10 +7,8 @@ class Donee:public Person
     public:
         Donee();
         static long int stDoneeID;
-        void signIn();
-        int matchPassword(long int id,string pass);
+        void signUp(long long int personCount);
         void displayProfile();
-        void Menu();
         void submenu();
         void placeOrder();
         void setDoneeID(int ID)

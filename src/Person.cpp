@@ -19,7 +19,7 @@ Person::Person()
 }
 
 
-void Person::signIn()
+void Person::signUp(int personCount)
 {
     string Name;
     int Age;
@@ -49,22 +49,7 @@ void Person::signIn()
 }
 
 
-void Person::Menu()
-{
-    system("cls");
-     cout<<"\n\n1. Sign in :"<<endl;
-       cout<<"2. Log in :"<<endl;
-       int signOrLogInchoice;
-        cin>>signOrLogInchoice;
-    if(signOrLogInchoice==1)
-    {
-        signIn();
-    }
-    else if(signOrLogInchoice==2)
-    {
-        logIn();
-    }
-}
+
 void Person::displayProfile()
 {
     cout<<"Name: "<<getName()<<"\nAge: "<<getAge()<<"\nEmail: "<<getEmail()<<endl;
@@ -75,10 +60,5 @@ void Person::productMenu()
     system("cls");
     cout<<"Choose category :\n";
     cout<<"a.Money\nb.Cloth\nc.Book\nd.Blood\ne.Mental Counselling\n";
-}
-
-void Person::logIn()
-{
-
 }
 

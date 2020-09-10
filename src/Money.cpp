@@ -10,6 +10,7 @@ Money::Money()
 {
     //ctor
 }
+
 void Money::uploadProduct()
 {
     cout<<"Enter amount : ";
@@ -55,46 +56,54 @@ void Money::uploadProduct()
         fout << productID << endl;
     fout.close();
     cout<<"\n\nUploaded...";
-    type = Temporary;
+
+    type = Parmanent;
+
+    ofstream fmonout;
+    fmonout.open("moneyDetails.txt", std::ios::out | std::ios::app);
+    fmonout << productID << "   " << Amount << "       " << "Permanent" << endl;
+    fmonout.close();
 }
 
 void Money::placeOrder()
 {
-     ifstream fmn;
-     fmn.open("totalMoney.txt");
+    cout<<"Enter amount : ";
+    double Amount;
+    int dte,month,year;
     double available;
+    cin>>Amount;
+    setAmount(Amount);
+    cout<<"Enter estimated date to return(DD MM YYYY) :";
+    cin>>dte>>month>>year;
+    date.setRemainingDay(dte,month,year);
+    ifstream fmn;
+    fmn.open("totalMoney.txt");
     if(!fmn)
     {
         cout<<"Sorry,no money available."<<endl;
     }
     else{
         while (fmn) {
-        fmn>>available;}
-    cout<<"Available BDT"<<available<<endl;
+        fmn>>available;
     }
-    cout<<"Enter amount : ";
-    double Amount;
-    int dte,month,year;
-    cin>>Amount;
-    setAmount(Amount);
     if(available>=Amount)
     {
         ofstream fout;
         fout.open("totalMoney.txt");
         fout << available-Amount << endl;
         fout.close();
-        cout<<"Enter estimated date to return(DD MM YYYY) :";
-        cin>>dte>>month>>year;
-        date.setRemainingDay(dte,month,year);
         cout<<"Order placed..."<<endl;
         cout<<"You have to return within " << date.getReturnWithin() << " days.." << endl;
     }
     else
     {
-        cout<<"Sorry, "<<Amount - available<<"tk should be reduced."<<endl;
+        cout<<"Sorry,only "<<available<<"tk is available."<<endl;
         placeOrder();
     }
+    }
+
     fmn.close();
+
 }
 
 void Money::displayTotalAmount()

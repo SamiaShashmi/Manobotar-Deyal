@@ -60,7 +60,7 @@ void Blood::uploadProduct()
     fflush(stdin);
     cout<<"Enter number of bags :";
     cin>>bag;
-    tbag = bag+getBagNoFromFile(g);
+    tbag = bag+getBagNoFromFile(g,bag);
     totalBag[g]= tbag;
     storeBagNoIntoFile(g,tbag);
     type = Parmanent;
@@ -82,9 +82,67 @@ void Blood::uploadProduct()
     fout << productID << endl;
     fout.close();
     cout<<"\n\nUploaded...";
+
+    if(bg==1)
+    {
+        ofstream fbloodout;
+        fbloodout.open("A+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==2)
+    {
+        ofstream fbloodout;
+        fbloodout.open("A-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==3)
+    {
+        ofstream fbloodout;
+        fbloodout.open("B+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==4)
+    {
+        ofstream fbloodout;
+        fbloodout.open("B-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==5)
+    {
+        ofstream fbloodout;
+        fbloodout.open("O+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==6)
+    {
+        ofstream fmonout;
+        fmonout.open("O-Details.txt", std::ios::out | std::ios::app);
+        fmonout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fmonout.close();
+    }
+    else if(bg==7)
+    {
+        ofstream fmonout;
+        fmonout.open("AB+Details.txt", std::ios::out | std::ios::app);
+        fmonout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fmonout.close();
+    }
+    else if(bg==8)
+    {
+        ofstream fbloodout;
+        fbloodout.open("AB-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << productID << "   " << bag << "       " << "Permanent" << endl;
+        fbloodout.close();
+    }
+
 }
 
-int Blood::getBagNoFromFile(bloodGroup g)
+int Blood::getBagNoFromFile(bloodGroup g,int bag)
 {
     ifstream fmn;
     if(g==A_positive)
@@ -92,7 +150,7 @@ int Blood::getBagNoFromFile(bloodGroup g)
         fmn.open("totalBagA+.txt");
         if(!fmn)
     {
-        stTotalBagApos=0;
+        stTotalBagApos=bag;
     }
     else{
         while (fmn) {
@@ -273,51 +331,40 @@ void Blood::storeBagNoIntoFile(bloodGroup g,int tbag)
 void Blood::placeOrder()
 {
     bloodGroup g;
-    char bag,tbag,bg;
+    int bag,tbag,bg;
     cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
-    cout<< "\n\nTo see the list of available bags, press 9" << endl;
     cin>>bg;
-    if(bg=='1')
+    if(bg==1)
     {
         g=A_positive;
     }
-    else if(bg=='2')
+    else if(bg==2)
     {
         g=A_negative;
     }
-    else if(bg=='3')
+    else if(bg==3)
     {
         g=B_positive;
     }
-    else if(bg=='4')
+    else if(bg==4)
     {
         g=B_negative;
     }
-    else if(bg=='5')
+    else if(bg==5)
     {
         g=O_positive;
     }
-    else if(bg=='6')
+    else if(bg==6)
     {
         g=O_negative;
     }
-    else if(bg=='7')
+    else if(bg==7)
     {
         g=AB_positive;
     }
-    else if(bg=='8')
+    else if(bg==8)
     {
         g=AB_negative;
-    }
-    else if(bg == '9')
-    {
-        showBagList();
-        placeOrder();
-    }
-    else
-    {
-        cout<<"Invalid choice!!!";
-        placeOrder();
     }
     cout<<"Enter number of bags :";
     cin>>bag;
@@ -325,12 +372,10 @@ void Blood::placeOrder()
     if(check == -1)
     {
         cout<<"Sorry,no bag is available."<<endl;
-        placeOrder();
     }
     else if(check == 0)
     {
         cout<<"Order placed..."<<endl;
-        return;
     }
     else
     {
@@ -528,18 +573,5 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
 
-
-}
-
-void Blood::showBagList()
-{
-    cout<<"1. A+\t"<<getBagNoFromFile(A_positive)<<endl;
-    cout<<"2. A-\t"<<getBagNoFromFile(A_negative)<<endl;
-    cout<<"3. B+\t"<<getBagNoFromFile(B_positive)<<endl;
-    cout<<"4. B-\t"<<getBagNoFromFile(B_negative)<<endl;
-    cout<<"5. O+\t"<<getBagNoFromFile(O_positive)<<endl;
-    cout<<"6. O-\t"<<getBagNoFromFile(O_negative)<<endl;
-    cout<<"7. AB+\t"<<getBagNoFromFile(AB_positive)<<endl;
-    cout<<"8. AB-\t"<<getBagNoFromFile(AB_negative)<<endl;
 
 }

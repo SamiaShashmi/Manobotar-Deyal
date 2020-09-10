@@ -18,8 +18,15 @@ using std::chrono::seconds;
 
 void print(const string&,unsigned int);
 unordered_map<int,long int>id_count;
-void print(const string& messege, unsigned int mil)
 
+void frame()
+{
+    for(int i =0; i < 82; i++)
+        cout << "-";
+    cout<<endl;
+}
+
+void print(const string& messege, unsigned int mil)
 {
     for(const char c:messege)
     {
@@ -72,9 +79,9 @@ void Menu(int donorOrDonee)
     cout<<"\n\n1. Sign up :"<<endl;
     cout<<"2. Log in :"<<endl;
     fflush(stdin);
-    int signOrLogInchoice;
+    char signOrLogInchoice;
     cin>>signOrLogInchoice;
-    if(signOrLogInchoice==1)
+    if(signOrLogInchoice== '1')
     {
         if(donorOrDonee == 1)
         {
@@ -94,7 +101,7 @@ void Menu(int donorOrDonee)
             person[personCount-1]->signUp(personCount-1);
         }
     }
-    else if(signOrLogInchoice==2)
+    else if(signOrLogInchoice== '2')
     {
         // logIn();
         long int id;
@@ -122,11 +129,13 @@ void Menu(int donorOrDonee)
         while(!fin.eof())
         {
             fin >> idCheck >> count;
+
             if(idCheck == id)
             {
                 break;
             }
         }
+
         string pass,passCheck;
         char ch;
         if(donorOrDonee == 1)
@@ -146,16 +155,18 @@ void Menu(int donorOrDonee)
             ch = _getch(); //* will be shown without character
             while(ch != 13) //character 13 is enter
             {
-                pass.push_back(ch);
-                cout << '*';
-                ch = _getch();
+                    pass.push_back(ch);
+                    cout << '*';
+                    ch = _getch();
             }
             if(pass==passCheck)
             {
                 system("cls");
                 cout<<"Login successful...\n\n\n";
+
                 Donor d;
-                d.submenu();
+                cout<<count;
+                person[count]->submenu();
             }
             else if(pass!=passCheck)
             {
@@ -195,10 +206,17 @@ void Menu(int donorOrDonee)
             else if(pass!=passCheck)
             {
                 cout<<"\n\nWrong password!!!";
+                sleep_for(seconds(3));
                 Menu(donorOrDonee);
             }
         }
 
+    }
+    else
+    {
+        cout<<"\n\nInvalid Choice!!!";
+         sleep_for(seconds(2));
+         Menu(donorOrDonee);
     }
 }
 
@@ -222,9 +240,15 @@ void startMenu()
     {
         Menu(1);
     }
-    else
+    else if(donorOrDoneeChoice == 'b')
     {
         Menu(2);
+    }
+    else
+    {
+        cout<<"\n\nInvalid Choice!!!";
+         sleep_for(seconds(2));
+        startMenu();
     }
 }
 
@@ -233,8 +257,8 @@ int main()
 
     string messege = " We cannot despair of humanity, since we ourselves are human beings. Albert Einstein.  ...";
     system("color F0");
-    //gotoxy(40,10);
-    //print(messege,140);
+    gotoxy(40,10);
+    print(messege,140);
 //     Person person;
     char c;
 

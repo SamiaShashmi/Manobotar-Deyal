@@ -42,6 +42,7 @@ public:
     virtual void signUp(int personCount);
     void displayProfile();
     virtual void submenu()=0;
+    void storeInFile();
     void productMenu();
 protected:
 

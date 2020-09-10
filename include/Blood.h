@@ -12,11 +12,11 @@ class Blood:public Product
 
         bloodGroup getGroup() { return Group; }
         void uploadProduct();
-         void placeOrder();
-
+        void placeOrder();
+        void showBagList();
         void setGroup(bloodGroup val) { Group = val; }
         void storeBagNoIntoFile(bloodGroup,int);
-        int getBagNoFromFile(bloodGroup,int);
+        int getBagNoFromFile(bloodGroup);
         int checkBagNoFromFile(bloodGroup,int);
         int getNumBag()
         {

@@ -7,14 +7,19 @@
 #include"Book.h"
 #include"MentalCounselling.h"
 #include<bits/stdc++.h>
-#include<iostream>
-#include <conio.h>
+#include<windows.h>
+#include<chrono>
+#include<thread>
+
 using namespace std;
+using std::chrono::seconds;
+using std::this_thread::sleep_for;
+
 extern unordered_map<int,long int>id_count;
 long int Donor::stDonorID=12000;
 
 void startMenu();
-
+void frame();
 Donor::Donor()
 {
 
@@ -54,14 +59,15 @@ void Donor::signUp(int personCount)
     fnut << ID << " "<< getPassword()<< endl;
     fnut.close();
      storeInFile();
+     cout<<"\n\nAccount successfully created..\nYour ID is "<< ID << endl << endl;
      submenu();
 }
 
 void Donor::submenu()
  {
     // system("cls");
-     cout<<"What do you want?"<<endl;
-     cout<<"a.View Profile"<<endl<<"b.View Donor List"<<endl<<"c.Upload Product"<<endl<<"d.Edit Product"<<endl<<"e.Delete Product"<<endl<<"f.Log Out"<<endl;
+     cout<<"\nWhat do you want?"<<endl;
+     cout<<"a.View Profile"<<endl<<"b.View Donor List"<<endl<<"c.Upload Product"<<endl<<"d.Log Out"<<endl;
      cout<<"Enter your choice : ";
      char donorchoice;
      cin>>donorchoice;
@@ -80,16 +86,22 @@ void Donor::submenu()
         uploadProduct();
         submenu();
      }
-     else if(donorchoice=='f')
+     else if(donorchoice=='d')
      {
             startMenu();
+     }
+     else
+     {
+         cout<<"\n\nInvalid Choice!!!";
+         sleep_for(seconds(2));
+         submenu();
      }
  }
 void Donor::storeInFile()
 {
         ofstream fout;
-        fout.open("Donor.dat", ios::app|ios::binary);
-        fout.write((char*)this,sizeof(*this));
+        fout.open("Donor.txt", std::ios::out | std::ios::app);
+        fout << setw(5) << donorID << setw(35) << name << setw(7) << age << setw(35) << email<<endl;
         fout.close();
 }
 
@@ -103,12 +115,14 @@ void Donor::displayProfile()
 void Donor::viewDonorList()
 {
     ifstream fin;
-    fin.open("Donor.dat",ios::in|ios::binary);
-    fin.read((char*)this,sizeof(*this));
-    while(!fin.eof()){
-            displayProfile();
-        fin.read((char*)this,sizeof(*this));
-    }
+    string em;
+    fin.open("Donor.txt",ios::in|ios::app);
+    frame();
+    cout << setw(5) << "ID" << setw(35) << "Name" << setw(7) << "Age" << setw(35) << "Email" <<endl;
+    frame();
+    while (getline(fin,em)) {
+cout << em << endl ;
+}
     fin.close();
 }
 

@@ -7,8 +7,8 @@ class Donor:public Person
 {
     public:
         Donor();
-        void storeInFile();
         void signUp(int personCount);
+        void storeInFile();
         void displayProfile();
         void viewDonorList();
         void submenu();

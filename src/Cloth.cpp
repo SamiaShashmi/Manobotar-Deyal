@@ -51,6 +51,20 @@ void Cloth::uploadProduct()
     type = Parmanent;
     cout<<"\n\nUploaded...";
 
+    if(tp==1)
+    {
+        ofstream fclothout;
+        fclothout.open("ladiesDetails.txt", std::ios::out | std::ios::app);
+        fclothout << productID << "   " << am << "       " << "Permanent" << endl;
+        fclothout.close();
+    }
+    else if(tp==2)
+    {
+        ofstream fclothout;
+        fclothout.open("gentsDetails.txt", std::ios::out | std::ios::app);
+        fclothout << productID << "   " << am << "       " << "Permanent" << endl;
+        fclothout.close();
+    }
 }
 
 void Cloth::placeOrder()

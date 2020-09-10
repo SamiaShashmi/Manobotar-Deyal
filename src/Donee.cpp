@@ -7,21 +7,11 @@
 #include"Book.h"
 #include"MentalCounselling.h"
 #include<bits/stdc++.h>
-#include<windows.h>
-#include<chrono>
-#include<thread>
+#include<iostream>
 
 using namespace std;
-using std::chrono::seconds;
-using std::this_thread::sleep_for;
-
 extern unordered_map<int,long int>id_count;
 long int Donee:: stDoneeID = 14000;
-
-void startMenu();
-void frame();
-using namespace std;
-
 
 void startMenu();
 
@@ -63,15 +53,14 @@ void Donee::signUp(int personCount)
     fnut.open("doneePassword.txt", std::ios::out | std::ios::app);
     fnut << ID << " "<< getPassword()<< endl;
     fnut.close();
-    storeInFile();
-    cout<<"\n\nAccount successfully created..\nYour ID is "<< ID << endl << endl;
+     storeInFile();
      submenu();
 }
 
 void Donee::submenu()
  {
     // system("cls");
-     cout<<"\nWhat do you want?"<<endl;
+     cout<<"What do you want?"<<endl;
      cout<<"a.View Profile"<<endl<<"b.View Donee List"<<endl<<"c.Display Product"<<endl<<"d.Place Order"<<endl<<"e.Log Out"<<endl;
      cout<<"Enter your choice : ";
      char doneechoice;
@@ -83,12 +72,12 @@ void Donee::submenu()
      }
      else if(doneechoice=='b')
      {
-         viewDoneeList();
          submenu();
      }
      else if(doneechoice=='c')
      {
-
+        displayProduct();
+        submenu();
      }
      else if(doneechoice=='d')
      {
@@ -99,19 +88,33 @@ void Donee::submenu()
      {
         startMenu();
      }
-     else
-     {
-         cout<<"\n\nInvalid Choice!!!";
-         sleep_for(seconds(2));
-         submenu();
-     }
  }
+
+ void Donee::storeInFile()
+{
+        ofstream fout;
+        fout.open("Donee.dat", ios::app|ios::binary);
+        fout.write((char*)this,sizeof(*this));
+        fout.close();
+}
 
 void Donee::displayProfile()
 {
     //system("cls");
     cout<<"ID : "<<getDoneeID()<<endl;
     Person::displayProfile();
+}
+
+void Donee::viewDoneeList()
+{
+    ifstream fin;
+    fin.open("Donee.dat",ios::in|ios::binary);
+    fin.read((char*)this,sizeof(*this));
+    while(!fin.eof()){
+            displayProfile();
+        fin.read((char*)this,sizeof(*this));
+    }
+    fin.close();
 }
 
 void Donee::placeOrder()
@@ -147,24 +150,160 @@ void Donee::placeOrder()
     }
 }
 
-void Donee::storeInFile()
+void Donee::displayProduct()
 {
-        ofstream fout;
-        fout.open("Donee.txt", std::ios::out | std::ios::app);
-        fout << setw(5) << doneeID << setw(35) << name << setw(7) << age << setw(35) << email<<endl;
-        fout.close();
+    Person::productMenu();
+    char option;
+    string line;
+    cin >> option;
+    if(option=='a')
+    {
+        cout << "Donation Details:" << endl;
+        cout << " PID" << "   " << "Amount" << "   " << "Type of Donation" << endl;
+        cout << "******************************************" << endl;
+        ifstream fmonin("moneyDetails.txt");
+        while(getline(fmonin,line))
+        {
+            cout << line << endl;
+        }
+        fmonin.close();
+    }
+    if(option=='b')
+    {
+        int tp;
+        string line;
+        cout<<"Enter type :\n1.Ladies  2.Gents" << endl;
+        cin>>tp;
+        cout << "Donation Details:" << endl;
+        cout << " PID" << "   " << "Amount" << "   " << "Type of Donation" << endl;
+        cout << "******************************************" << endl;
+
+        if(tp==1)
+        {
+            ifstream fclothin("ladiesDetails.txt");
+            while(getline(fclothin,line))
+            {
+                cout << line << endl;
+            }
+            fclothin.close();
+        }
+        else if(tp==2)
+        {
+            ifstream fclothin("gentsDetails.txt");
+            while(getline(fclothin,line))
+            {
+                cout << line << endl;
+            }
+            fclothin.close();
+        }
+    }
+    if(option=='d')
+    {
+        int bg;
+        string line;
+        cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
+        cin>>bg;
+
+        cout << "Donation Details:" << endl;
+        cout << " PID" << "   " << "Amount" << "   " << "Type of Donation" << endl;
+        cout << "******************************************" << endl;
+
+        if(bg==1)
+        {
+            ifstream fbloodin("A+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==1)
+        {
+            ifstream fbloodin("A+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==2)
+        {
+            ifstream fbloodin("A-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==3)
+        {
+            ifstream fbloodin("B+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==4)
+        {
+            ifstream fbloodin("B-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==5)
+        {
+            ifstream fbloodin("O+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==6)
+        {
+            ifstream fbloodin("O-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==7)
+        {
+            ifstream fbloodin("AB+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==8)
+        {
+            ifstream fbloodin("AB-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+    }
+    if(option=='e')
+    {
+        string line;
+        cout << "Donation Details:" << endl;
+        cout << " ID" << "     " << "Name" <<  endl;
+        cout << "******************************************" << endl;
+
+        ifstream fmcin("mentalCounsellingDetails.txt");
+        while(getline(fmcin,line))
+        {
+            cout << line << endl;
+        }
+        fmcin.close();
+    }
+
 }
 
-void Donee::viewDoneeList()
-{
-    ifstream fin;
-    string em;
-    fin.open("Donee.txt",ios::in|ios::app);
-    frame();
-    cout << setw(5) << "ID" << setw(35) << "Name" << setw(7) << "Age" << setw(35) << "Email" <<endl;
-    frame();
-    while (getline(fin,em)) {
-cout << em << endl ;
-}
-    fin.close();
-}

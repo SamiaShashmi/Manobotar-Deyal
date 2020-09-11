@@ -10,6 +10,7 @@ class Donee:public Person
         void signUp(int personCount);
         void storeInFile();
         void displayProfile();
+        void displayProduct();
         void submenu();
         void placeOrder();
         void viewDoneeList();

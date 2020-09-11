@@ -50,7 +50,20 @@ void Cloth::uploadProduct()
     fout.close();
     type = Parmanent;
     cout<<"\n\nUploaded...";
-
+    if(tp==1)
+    {
+        ofstream fclothout;
+        fclothout.open("ladiesDetails.txt", std::ios::out | std::ios::app);
+        fclothout << setw(5) << productID << setw(35) << am << setw(42) << "Permanent" << endl;
+        fclothout.close();
+    }
+    else if(tp==2)
+    {
+        ofstream fclothout;
+        fclothout.open("gentsDetails.txt", std::ios::out | std::ios::app);
+        fclothout << setw(5) << productID << setw(35) << am << setw(42) << "Permanent" << endl;
+        fclothout.close();
+    }
 }
 
 void Cloth::placeOrder()
@@ -67,9 +80,10 @@ void Cloth::placeOrder()
     {
         t=Gents;
     }
+    int check = checkTotalClothFromFile(t,am);
+    cout<< endl << check << " clothes are available..\n"<<endl;
     cout<<"Enter amount : ";
     cin>>am;
-    int check = checkTotalClothFromFile(t,am);
     if(check == -1)
     {
         cout<<"Sorry,no cloth is available"<<endl;

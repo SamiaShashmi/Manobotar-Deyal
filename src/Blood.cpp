@@ -82,6 +82,62 @@ void Blood::uploadProduct()
     fout << productID << endl;
     fout.close();
     cout<<"\n\nUploaded...";
+    if(bg==1)
+    {
+        ofstream fbloodout;
+        fbloodout.open("A+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==2)
+    {
+        ofstream fbloodout;
+        fbloodout.open("A-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==3)
+    {
+        ofstream fbloodout;
+        fbloodout.open("B+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==4)
+    {
+        ofstream fbloodout;
+        fbloodout.open("B-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==5)
+    {
+        ofstream fbloodout;
+        fbloodout.open("O+Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
+    else if(bg==6)
+    {
+        ofstream fmonout;
+        fmonout.open("O-Details.txt", std::ios::out | std::ios::app);
+        fmonout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fmonout.close();
+    }
+    else if(bg==7)
+    {
+        ofstream fmonout;
+        fmonout.open("AB+Details.txt", std::ios::out | std::ios::app);
+        fmonout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fmonout.close();
+    }
+    else if(bg==8)
+    {
+        ofstream fbloodout;
+        fbloodout.open("AB-Details.txt", std::ios::out | std::ios::app);
+        fbloodout << setw(5) << productID << setw(35) << bag << setw(42) << "Permanent" << endl;
+        fbloodout.close();
+    }
 }
 
 int Blood::getBagNoFromFile(bloodGroup g)

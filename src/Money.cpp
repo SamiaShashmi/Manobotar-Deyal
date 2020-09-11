@@ -56,6 +56,10 @@ void Money::uploadProduct()
     fout.close();
     cout<<"\n\nUploaded...";
     type = Temporary;
+    ofstream fmonout;
+    fmonout.open("moneyDetails.txt", std::ios::out | std::ios::app);
+    fmonout << setw(5 ) << productID << setw(35) << Amount << setw(42) << "Temporary" << endl;
+    fmonout.close();
 }
 
 void Money::placeOrder()

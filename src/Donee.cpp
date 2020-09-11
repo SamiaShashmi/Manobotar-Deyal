@@ -88,7 +88,8 @@ void Donee::submenu()
      }
      else if(doneechoice=='c')
      {
-
+        displayProduct();
+        submenu();
      }
      else if(doneechoice=='d')
      {
@@ -167,4 +168,164 @@ void Donee::viewDoneeList()
 cout << em << endl ;
 }
     fin.close();
+}
+
+void Donee::displayProduct()
+{
+    Person::productMenu();
+    char option;
+    string line;
+    cin >> option;
+    if(option=='a')
+    {
+        cout << "Donation Details:" << endl;
+        frame();
+        cout <<setw(5) << " PID" << setw(35)<< "Amount" <<setw(42) << "Type of Donation" << endl;
+        frame();
+        ifstream fmonin("moneyDetails.txt");
+        while(getline(fmonin,line))
+        {
+            cout << line << endl;
+        }
+        fmonin.close();
+    }
+    if(option=='b')
+    {
+        int tp;
+        string line;
+        cout<<"Enter type :\n1.Ladies  2.Gents" << endl;
+        cin>>tp;
+        cout << "Donation Details:" << endl;
+        frame();
+        cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
+        frame();
+
+        if(tp==1)
+        {
+            ifstream fclothin("ladiesDetails.txt");
+            while(getline(fclothin,line))
+            {
+                cout << line << endl;
+            }
+            fclothin.close();
+        }
+        else if(tp==2)
+        {
+            ifstream fclothin("gentsDetails.txt");
+            while(getline(fclothin,line))
+            {
+                cout << line << endl;
+            }
+            fclothin.close();
+        }
+    }
+    if(option=='d')
+    {
+        int bg;
+        string line;
+        cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
+        cin>>bg;
+
+        cout << "Donation Details:" << endl;
+        frame();
+        cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
+        frame();
+
+        if(bg==1)
+        {
+            ifstream fbloodin("A+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==1)
+        {
+            ifstream fbloodin("A+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==2)
+        {
+            ifstream fbloodin("A-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==3)
+        {
+            ifstream fbloodin("B+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==4)
+        {
+            ifstream fbloodin("B-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==5)
+        {
+            ifstream fbloodin("O+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==6)
+        {
+            ifstream fbloodin("O-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==7)
+        {
+            ifstream fbloodin("AB+Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+        else if(bg==8)
+        {
+            ifstream fbloodin("AB-Details.txt");
+            while(getline(fbloodin,line))
+            {
+                cout << line << endl;
+            }
+            fbloodin.close();
+        }
+    }
+    if(option=='e')
+    {
+        string line;
+        cout << "Donation Details:" << endl;
+        frame();
+        cout <<setw(5) << " ID" << setw(77) << "Consultant Name" << endl;
+        frame();
+        ifstream fmcin("mentalCounsellingDetails.txt");
+        while(getline(fmcin,line))
+        {
+            cout << line << endl;
+        }
+        fmcin.close();
+    }
+
 }

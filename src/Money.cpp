@@ -58,7 +58,7 @@ void Money::uploadProduct(long int id,string name)
     type = Temporary;
     ofstream fmonout;
     fmonout.open("moneyDetails.txt", std::ios::out | std::ios::app);
-    fmonout << setw(5 ) << productID << setw(35) << Amount << setw(42) << "Temporary" << endl;
+    fmonout << setw(5 ) << productID << setw(15) << Amount << setw(36) << "Temporary" << setw(10) << id << setw(35) << name <<endl;
     fmonout.close();
 }
 

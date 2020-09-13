@@ -23,7 +23,7 @@ unordered_map<int,long int>id_count;
 void frame(int n)
 {
     for(int i =0; i < n; i++)
-        cout << "-";
+        {cout << "-";}
     cout<<endl;
 }
 

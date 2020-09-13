@@ -179,9 +179,9 @@ void Donee::displayProduct()
     if(option=='a')
     {
         cout << "Donation Details:" << endl;
-        frame(82);
-        cout <<setw(5) << " PID" << setw(35)<< "Amount" <<setw(42) << "Type of Donation" << endl;
-        frame(82);
+        frame(98);
+        cout <<setw(5) << " PID" << setw(10) << "Amount" << setw(36) << "Type of Donation" << setw(12) << "Donors' ID" << setw(35)<< "Donors' Name" << endl;
+        frame(98);
         ifstream fmonin("moneyDetails.txt");
         while(getline(fmonin,line))
         {
@@ -196,9 +196,9 @@ void Donee::displayProduct()
         cout<<"Enter type :\n1.Ladies  2.Gents" << endl;
         cin>>tp;
         cout << "Donation Details:" << endl;
-        frame(82);
-        cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
-        frame(82);
+        frame(98);
+        cout <<setw(5) << " PID" << setw(10) << "Amount" << setw(36) << "Type of Donation" << setw(12) << "Donors' ID" << setw(35)<< "Donors' Name" << endl;
+        frame(98);
 
         if(tp==1)
         {
@@ -227,20 +227,11 @@ void Donee::displayProduct()
         cin>>bg;
 
         cout << "Donation Details:" << endl;
-        frame(82);
-        cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
-        frame(82);
+        frame(98);
+        cout <<setw(5) << " PID" << setw(10) << "Amount" << setw(36) << "Type of Donation" << setw(12) << "Donors' ID" << setw(35)<< "Donors' Name" << endl;
+        frame(98);
 
         if(bg==1)
-        {
-            ifstream fbloodin("A+Details.txt");
-            while(getline(fbloodin,line))
-            {
-                cout << line << endl;
-            }
-            fbloodin.close();
-        }
-        else if(bg==1)
         {
             ifstream fbloodin("A+Details.txt");
             while(getline(fbloodin,line))
@@ -317,9 +308,9 @@ void Donee::displayProduct()
     {
         string line;
         cout << "Donation Details:" << endl;
-        frame(82);
-        cout <<setw(5) << " ID" << setw(77) << "Consultant Name" << endl;
-        frame(82);
+        frame(91);
+        cout <<setw(20) << " Counsellor's ID" << setw(35) << "Name" << setw(36) << "Date" << endl;
+        frame(91);
         ifstream fmcin("mentalCounsellingDetails.txt");
         while(getline(fmcin,line))
         {

@@ -88,56 +88,56 @@ void Blood::uploadProduct(long int id,string name)
     {
         ofstream fbloodout;
         fbloodout.open("A+Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name <<endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name <<endl;
         fbloodout.close();
     }
     else if(bg==2)
     {
         ofstream fbloodout;
         fbloodout.open("A-Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fbloodout.close();
     }
     else if(bg==3)
     {
         ofstream fbloodout;
         fbloodout.open("B+Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fbloodout.close();
     }
     else if(bg==4)
     {
         ofstream fbloodout;
         fbloodout.open("B-Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent"<< setw(10) << id << setw(35) << name << endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent"<< setw(12) << id << setw(35) << name << endl;
         fbloodout.close();
     }
     else if(bg==5)
     {
         ofstream fbloodout;
         fbloodout.open("O+Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fbloodout.close();
     }
     else if(bg==6)
     {
         ofstream fmonout;
         fmonout.open("O-Details.txt", std::ios::out | std::ios::app);
-        fmonout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fmonout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fmonout.close();
     }
     else if(bg==7)
     {
         ofstream fmonout;
         fmonout.open("AB+Details.txt", std::ios::out | std::ios::app);
-        fmonout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fmonout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fmonout.close();
     }
     else if(bg==8)
     {
         ofstream fbloodout;
         fbloodout.open("AB-Details.txt", std::ios::out | std::ios::app);
-        fbloodout << setw(5) << productID << setw(35) << bag << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fbloodout << setw(5) << productID << setw(10) << bag << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fbloodout.close();
     }
 }

@@ -54,14 +54,14 @@ void Cloth::uploadProduct(long int id,string name)
     {
         ofstream fclothout;
         fclothout.open("ladiesDetails.txt", std::ios::out | std::ios::app);
-        fclothout << setw(5) << productID << setw(35) << am << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fclothout << setw(5) << productID << setw(10) << am << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fclothout.close();
     }
     else if(tp==2)
     {
         ofstream fclothout;
         fclothout.open("gentsDetails.txt", std::ios::out | std::ios::app);
-        fclothout << setw(5) << productID << setw(35) << am << setw(36) << "Permanent" << setw(10) << id << setw(35) << name << endl;
+        fclothout << setw(5) << productID << setw(10) << am << setw(36) << "Permanent" << setw(12) << id << setw(35) << name << endl;
         fclothout.close();
     }
 }

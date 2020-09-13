@@ -1,6 +1,6 @@
 #ifndef DATE_H
 #define DATE_H
-
+#include<bits/stdc++.h>
 class Date
 {
     public:
@@ -14,12 +14,13 @@ class Date
         int countLeapYears();
         void getDifference(Date dt1);
         void setRemainingDay(int Day,int Month,int Year);
-        int dayCountFromJanuary();
         int getReturnWithin()
         {
             return returnWithin;
         }
-
+        bool isLeap(int y);
+        void  addDays(int x);
+        friend std::ostream& operator<<(std::ostream& os, const Date& dt);
     protected:
 
     private:

@@ -1,15 +1,1 @@
-12008                              samia     43                        q@gmail.com
-12009                     merina sultana     45                        a@gmail.com
-12010                             Shahid     24                       sh@gmail.com
-12011                         afia Anjum     23                       as@gmail.com
-12012                         Afia Anjum     27                        d@gmail.com
-12013                      Sumaia Rahman     30                        u@gmail.com
-12014                                 Ga     45                       ga@gmail.com
-12015                                sam     21                                asd
-12016                                sam     21                                asd
-12017                              samia     12                                asd
-12018                               afia     23                               cvbn
-12019                                mko     90                                mko
-12020                                xyz     23                                xyz
-12021                              samia     23                              cgbnv
-12022                               asmk     12                               asdf
+12001                              samia     21                               asdf

@@ -78,7 +78,7 @@ void Money::placeOrder()
     }
     cout<<"Enter amount : ";
     double Amount;
-    int dte,month,year;
+    int daysToReturn;
     cin>>Amount;
     setAmount(Amount);
     if(available>=Amount)
@@ -87,11 +87,11 @@ void Money::placeOrder()
         fout.open("totalMoney.txt");
         fout << available-Amount << endl;
         fout.close();
-        cout<<"Enter estimated date to return(DD MM YYYY) :";
-        cin>>dte>>month>>year;
-        date.setRemainingDay(dte,month,year);
+        cout<<"Enter estimated days to return within :";
+        cin >> daysToReturn;
+        date.addDays(daysToReturn);
         cout<<"Order placed..."<<endl;
-        cout<<"You have to return within " << date.getReturnWithin() << " days.." << endl;
+        cout<<"You have to return within " << date << endl;
     }
     else
     {

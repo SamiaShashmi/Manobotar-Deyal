@@ -19,7 +19,7 @@ extern unordered_map<int,long int>id_count;
 long int Donor::stDonorID=12000;
 
 void startMenu();
-void frame();
+void frame(int n);
 Donor::Donor()
 {
 
@@ -117,9 +117,9 @@ void Donor::viewDonorList()
     ifstream fin;
     string em;
     fin.open("Donor.txt",ios::in|ios::app);
-    frame();
+    frame(82);
     cout << setw(5) << "ID" << setw(35) << "Name" << setw(7) << "Age" << setw(35) << "Email" <<endl;
-    frame();
+    frame(82);
     while (getline(fin,em)) {
 cout << em << endl ;
 }
@@ -136,26 +136,26 @@ void Donor::uploadProduct()
     if(productChoice=='a')
     {
         product.push_back(new Money);
-        product[productCount]->uploadProduct();
+        product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='b')
     {
         product.push_back(new Cloth);
-        product[productCount]->uploadProduct();
+        product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='d')
     {
         product.push_back(new Blood);
-        product[productCount]->uploadProduct();
+        product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='d')
     {
         product.push_back(new Blood);
-        product[productCount]->uploadProduct();
+        product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='e')
     {
         product.push_back(new MentalCounselling);
-        product[productCount]->uploadProduct();
+        product[productCount]->uploadProduct(getDonorID(),getName());
     }
 }

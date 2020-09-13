@@ -11,7 +11,7 @@ class Blood:public Product
         Blood();
 
         bloodGroup getGroup() { return Group; }
-        void uploadProduct();
+        void uploadProduct(long int id,string name);
         void placeOrder();
         void showBagList();
         void setGroup(bloodGroup val) { Group = val; }

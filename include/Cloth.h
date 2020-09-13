@@ -9,7 +9,7 @@ class Cloth:public Product
         static int stLadiesCount;
         static int stGentsCount;
         static long int stProductID;
-        void uploadProduct();
+        void uploadProduct(long int id,string name);
         void placeOrder();
         void storeTotalClothIntoFile(clothType t,int am);
         int getTotalClothFromFile(clothType,int);

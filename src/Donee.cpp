@@ -19,7 +19,7 @@ extern unordered_map<int,long int>id_count;
 long int Donee:: stDoneeID = 14000;
 
 void startMenu();
-void frame();
+void frame(int n);
 using namespace std;
 
 
@@ -161,9 +161,9 @@ void Donee::viewDoneeList()
     ifstream fin;
     string em;
     fin.open("Donee.txt",ios::in|ios::app);
-    frame();
+    frame(82);
     cout << setw(5) << "ID" << setw(35) << "Name" << setw(7) << "Age" << setw(35) << "Email" <<endl;
-    frame();
+    frame(82);
     while (getline(fin,em)) {
 cout << em << endl ;
 }
@@ -179,9 +179,9 @@ void Donee::displayProduct()
     if(option=='a')
     {
         cout << "Donation Details:" << endl;
-        frame();
+        frame(82);
         cout <<setw(5) << " PID" << setw(35)<< "Amount" <<setw(42) << "Type of Donation" << endl;
-        frame();
+        frame(82);
         ifstream fmonin("moneyDetails.txt");
         while(getline(fmonin,line))
         {
@@ -196,9 +196,9 @@ void Donee::displayProduct()
         cout<<"Enter type :\n1.Ladies  2.Gents" << endl;
         cin>>tp;
         cout << "Donation Details:" << endl;
-        frame();
+        frame(82);
         cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
-        frame();
+        frame(82);
 
         if(tp==1)
         {
@@ -227,9 +227,9 @@ void Donee::displayProduct()
         cin>>bg;
 
         cout << "Donation Details:" << endl;
-        frame();
+        frame(82);
         cout <<setw(5) << " PID" << setw(35) << "Amount" << setw(42) << "Type of Donation" << endl;
-        frame();
+        frame(82);
 
         if(bg==1)
         {
@@ -317,9 +317,9 @@ void Donee::displayProduct()
     {
         string line;
         cout << "Donation Details:" << endl;
-        frame();
+        frame(82);
         cout <<setw(5) << " ID" << setw(77) << "Consultant Name" << endl;
-        frame();
+        frame(82);
         ifstream fmcin("mentalCounsellingDetails.txt");
         while(getline(fmcin,line))
         {

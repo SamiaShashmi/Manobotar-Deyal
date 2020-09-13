@@ -10,7 +10,7 @@ Money::Money()
 {
     //ctor
 }
-void Money::uploadProduct()
+void Money::uploadProduct(long int id,string name)
 {
     cout<<"Enter amount : ";
     double Amount;
@@ -74,7 +74,7 @@ void Money::placeOrder()
     else{
         while (fmn) {
         fmn>>available;}
-    cout<<"Available BDT"<<available<<endl;
+    cout<<"Available BDT "<<available<<endl;
     }
     cout<<"Enter amount : ";
     double Amount;

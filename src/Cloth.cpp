@@ -9,7 +9,7 @@ Cloth::Cloth()
 {
     //ctor
 }
-void Cloth::uploadProduct()
+void Cloth::uploadProduct(long int id,string name)
 {
     clothType t;
     int am,tcloth,tp;

@@ -19,9 +19,9 @@ using std::chrono::seconds;
 void print(const string&,unsigned int);
 unordered_map<int,long int>id_count;
 
-void frame()
+void frame(int n)
 {
-    for(int i =0; i < 82; i++)
+    for(int i =0; i < n; i++)
         cout << "-";
     cout<<endl;
 }
@@ -86,7 +86,6 @@ void Menu(int donorOrDonee)
         if(donorOrDonee == 1)
         {
             personCount = getCount();
-            cout<<personCount;
             person[personCount] = new Donor;
             personCount++;
             updateCount(personCount);

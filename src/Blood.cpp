@@ -3,6 +3,8 @@
 #include"Person.h"
 #include"Donor.h"
 #include<bits/stdc++.h>
+using namespace std;
+void frame(int n);
 
 int Blood::stTotalBagApos=0;
 int Blood::stTotalBagAneg=0;
@@ -18,11 +20,11 @@ Blood::Blood()
     //ctor
 }
 
-void Blood::uploadProduct()
+void Blood::uploadProduct(long int id,string name)
 {
     bloodGroup g;
     int bag,tbag,bg;
-    cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
+    cout<<"Enter group :\n1.A(+)ve  2.A(-)ve  3.B(+)ve  4.B(-)ve  5.O(+)ve  6.O(-)ve  7.AB(+)ve  8.AB(-)ve"<<endl;
     cin>>bg;
     if(bg==1)
     {
@@ -329,7 +331,8 @@ void Blood::storeBagNoIntoFile(bloodGroup g,int tbag)
 void Blood::placeOrder()
 {
     bloodGroup g;
-    char bag,tbag,bg;
+    int bag;
+    char bg;
     cout<<"Enter group :\n1.A(+)ve 2.A(-)ve 3.B(+)ve 4.B(-)ve 5.O(+)ve 6.O(-)ve 7.AB(+)ve 8.AB(-)ve"<<endl;
     cout<< "\n\nTo see the list of available bags, press 9" << endl;
     cin>>bg;
@@ -386,7 +389,6 @@ void Blood::placeOrder()
     else if(check == 0)
     {
         cout<<"Order placed..."<<endl;
-        return;
     }
     else
     {
@@ -412,7 +414,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-    if(available>bag)
+    if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -435,7 +437,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-     if(available>bag)
+     if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -458,7 +460,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-    if(available>bag)
+    if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -481,7 +483,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-     if(available>bag)
+     if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -504,7 +506,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-     if(available>bag)
+     if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -527,7 +529,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-    if(available>bag)
+    if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -550,7 +552,7 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-    if(available>bag)
+    if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
@@ -573,13 +575,14 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
     }
     }
     fmn.close();
-    if(available>bag)
+    if(available >= bag)
     {
         storeBagNoIntoFile(g,available-bag);
         return 0;
     }
     else
     {
+        cout<<"ga";
         return available;
     }
     }
@@ -589,13 +592,16 @@ int Blood::checkBagNoFromFile(bloodGroup g,int bag)
 
 void Blood::showBagList()
 {
-    cout<<"1. A+\t"<<getBagNoFromFile(A_positive)<<endl;
-    cout<<"2. A-\t"<<getBagNoFromFile(A_negative)<<endl;
-    cout<<"3. B+\t"<<getBagNoFromFile(B_positive)<<endl;
-    cout<<"4. B-\t"<<getBagNoFromFile(B_negative)<<endl;
-    cout<<"5. O+\t"<<getBagNoFromFile(O_positive)<<endl;
-    cout<<"6. O-\t"<<getBagNoFromFile(O_negative)<<endl;
-    cout<<"7. AB+\t"<<getBagNoFromFile(AB_positive)<<endl;
-    cout<<"8. AB-\t"<<getBagNoFromFile(AB_negative)<<endl;
+    frame(26);
+    cout<<setw(6) << "Group" << setw(20) << "Number of Bags" << endl;
+    frame(26);
+    cout<<setw(6)<<"1. A+" << setw(20)<<getBagNoFromFile(A_positive)<<endl;
+    cout<<setw(6)<<"2. A-" << setw(20)<<getBagNoFromFile(A_negative)<<endl;
+    cout<<setw(6)<<"3. B+" << setw(20)<<getBagNoFromFile(B_positive)<<endl;
+    cout<<setw(6)<<"4. B-" << setw(20)<<getBagNoFromFile(B_negative)<<endl;
+    cout<<setw(6)<<"5. O+" << setw(20)<<getBagNoFromFile(O_positive)<<endl;
+    cout<<setw(6)<<"6. O-" << setw(20)<<getBagNoFromFile(O_negative)<<endl;
+    cout<<setw(6)<<"7. AB+" << setw(20)<<getBagNoFromFile(AB_positive)<<endl;
+    cout<<setw(6)<<"8. AB-" << setw(20)<<getBagNoFromFile(AB_negative)<<endl;
 
 }

@@ -7,7 +7,7 @@ class MentalCounselling:public Product
 {
     public:
         MentalCounselling();
-        void uploadProduct();
+        void uploadProduct(long int id, string name);
         void placeOrder();
         void displayCounsellorDetails();
         void displayAvailableDates();

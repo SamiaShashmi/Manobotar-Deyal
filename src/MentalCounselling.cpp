@@ -2,34 +2,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void frame(int n);
 MentalCounselling::MentalCounselling()
 {
     //ctor
 }
 
-void MentalCounselling::uploadProduct()
+void MentalCounselling::uploadProduct(long int id,string name)
 {
-    long int id;
     int day,month,year;
-    string name;
-    cout<<"Enter your ID :";
-    cin>>id;
     setConsultantID(id);
-    cout<<"Enter consultant name :";
-    cin.ignore();
-    getline(cin,name);
     cout<<"Enter when you will be free to counsel(DD MM YYYY) :";
     cin>>day>>month>>year;
     date.setDate(day,month,year);
+    date.setRemainingDay(day,month,year);
     //cout<<date.dayCountFromJanuary()<<endl;
     ofstream fout;
     fout.open("mentalCounsellingDates.txt",ios::out|ios::app);
-    fout << date.dayCountFromJanuary() << endl;
+    fout << date.getReturnWithin() << endl;
     fout.close();
     //string str = to_string(day)+" "+to_string(month)+" "+to_string(year);
     ofstream fmut;
     fmut.open("mentalCounsellingDetails.txt",ios::out|ios::app);
-    fmut << id<<" "<<name<<endl;
+    fmut << setw(5) << id<< setw(40)<<name<< setw(8) << day << "-" << month << "-"<< year << endl;
     fmut.close();
     ofstream fnut;
     fnut.open("mentalCounsellingAvailable.txt",ios::out|ios::app);
@@ -40,7 +35,7 @@ void MentalCounselling::uploadProduct()
 
 void MentalCounselling::placeOrder()
 {
-    cout<<"1. Appoinment\n2.View Counsellor List\n3.Display available dates\n4.Exit\n";
+    cout<<"1. Appoinment\n2. View Counsellor List\n3. Display available dates\n4. Exit\n";
     int counsellingChoice;
     cin>>counsellingChoice;
     if(counsellingChoice == 1)
@@ -67,6 +62,7 @@ void MentalCounselling::createAppoinment()
     cout<<"Enter when you want consultation(DD MM YYYY) :";
     cin>>day>>month>>year;
     date.setDate(day,month,year);
+    date.setRemainingDay(day,month,year);
     ifstream fin;
 	fin.open("mentalCounsellingDates.txt");
 	if(!fin)
@@ -76,7 +72,7 @@ void MentalCounselling::createAppoinment()
 	while(!fin.eof())
 	{
 		fin>>available;
-		if(available==date.dayCountFromJanuary())
+		if(available==date.getReturnWithin())
         {
             isFound++;
             cout<<"Appoinment created..."<<endl;
@@ -99,7 +95,7 @@ void MentalCounselling::createAppoinment()
     while (fout>>check)
     {
       if (check != available)
-        temp << check << endl;
+        {temp << check << endl;}
     }
     fout.close();
     temp.close();
@@ -134,6 +130,9 @@ void MentalCounselling::displayCounsellorDetails()
 {
     string line;
     ifstream file("mentalCounsellingDetails.txt");
+    frame(61);
+    cout<< setw(5) << "ID" << setw(40) << "Name" << setw(16) << "Date" << endl;
+    frame(61);
     while(getline(file,line))
     {
         cout<<line<<endl;
@@ -146,6 +145,9 @@ void MentalCounselling::displayAvailableDates()
 {
     string line;
     ifstream file("mentalCounsellingAvailable.txt");
+    frame(10);
+    cout<<"DD-MM-YYYY\n";
+    frame(10);
     while(getline(file,line))
     {
         cout<<line<<endl;

@@ -6,7 +6,6 @@ class Donee:public Person
 {
     public:
         Donee();
-        static long int stDoneeID;
         void signUp(int personCount);
         void storeInFile();
         void displayProfile();
@@ -26,7 +25,7 @@ class Donee:public Person
 
     private:
         long int doneeID;
-
+        static long int stDoneeID;
 };
 
 #endif // DONEE_H

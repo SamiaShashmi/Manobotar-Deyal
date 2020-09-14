@@ -10,8 +10,6 @@ class Money:public Product
         Money();
         void uploadProduct(long int id,string name);
         void placeOrder();
-        static double stTotalAmount;
-        static long int stProductID;
         void setAmount(int Amount)
         {
             amount = Amount;
@@ -38,6 +36,8 @@ class Money:public Product
     private:
         double amount;
         double totalAmount;
+        static double stTotalAmount;
+        static long int stProductID;
         Date date;
 };
 

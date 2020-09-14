@@ -45,8 +45,6 @@ public:
     void storeInFile();
     void productMenu();
 protected:
-
-    long int ID;
     string name;
     int age;
     string email;

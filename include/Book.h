@@ -14,7 +14,7 @@ class Book:public Product
     protected:
 
     private:
-        Date d;
+        Date date;
 };
 
 #endif // BOOK_H

@@ -124,31 +124,26 @@ void Donee::placeOrder()
     if(productChoice=='a')
     {
         product2.push_back(new Money);
-        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='b')
     {
         product2.push_back(new Cloth);
-        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='c')
     {
         product2.push_back(new Book);
-        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='d')
     {
          product2.push_back(new Blood);
-         productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='e')
     {
          product2.push_back(new MentalCounselling);
-         productCount++;
         product2[productCount]->placeOrder();
     }
 }

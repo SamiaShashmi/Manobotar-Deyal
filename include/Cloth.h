@@ -6,9 +6,6 @@ class Cloth:public Product
 {
     public:
         Cloth();
-        static int stLadiesCount;
-        static int stGentsCount;
-        static long int stProductID;
         void uploadProduct(long int id,string name);
         void placeOrder();
         void storeTotalClothIntoFile(clothType t,int am);
@@ -38,4 +35,7 @@ class Cloth:public Product
         int amount;
         clothType cltype;
         map<clothType,int>totalCloth;
+        static int stLadiesCount;
+        static int stGentsCount;
+        static long int stProductID;
 };

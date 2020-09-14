@@ -33,7 +33,6 @@ class MentalCounselling:public Product
     private:
         long int consultantID;
         Date date;
-        int dayCountFromJanuary;
 };
 
 #endif // MENTALCOUNSELLING_H

@@ -35,11 +35,10 @@ class Blood:public Product
         {
             return type;
         }
-    protected:
+    private:
         bloodGroup Group;
         int numBag;
         map<bloodGroup,int>totalBag;
-    private:
         static int stTotalBagApos;
         static int stTotalBagAneg;
         static int stTotalBagBpos;

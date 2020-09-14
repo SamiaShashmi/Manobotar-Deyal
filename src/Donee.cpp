@@ -219,6 +219,56 @@ void Donee::displayProduct()
             fclothin.close();
         }
     }
+    if(option=='c')
+    {
+        int ss;
+        string line;
+        cout<<"Book genre : \n1.Novel\n2.Poetry\n3.Comics\n4.Others"<<endl;
+        cin >> ss;
+
+        cout << "Donation Details:" << endl;
+        frame(88);
+        cout <<setw(5) << " Book Name"  << setw(36) << "Type of Donation" << setw(12) << "Donors' ID" << setw(35) << "Donors' Name" << endl;
+        frame(88);
+
+        if(ss==1)
+        {
+            ifstream fbookin("NovelDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==2)
+        {
+            ifstream fbookin("PoetryDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==3)
+        {
+            ifstream fbookin("ComicsDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==4)
+        {
+            ifstream fbookin("OthersDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+
+    }
     if(option=='d')
     {
         int bg;

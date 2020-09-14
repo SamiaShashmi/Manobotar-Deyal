@@ -15,6 +15,7 @@ using namespace std;
 using std::chrono::seconds;
 using std::this_thread::sleep_for;
 
+int productCount = -1;
 extern unordered_map<int,long int>id_count;
 long int Donor::stDonorID=12000;
 
@@ -130,32 +131,42 @@ void Donor::uploadProduct()
 {
     Person::productMenu();
     vector<Product*>product;
-    int productCount=0;
     char productChoice;
     cin>>productChoice;
     if(productChoice=='a')
     {
         product.push_back(new Money);
+        productCount++;
         product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='b')
     {
         product.push_back(new Cloth);
+        productCount++;
+        product[productCount]->uploadProduct(getDonorID(),getName());
+    }
+    else if(productChoice=='c')
+    {
+        product.push_back(new Book);
+        productCount++;
         product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='d')
     {
         product.push_back(new Blood);
+        productCount++;
         product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='d')
     {
         product.push_back(new Blood);
+        productCount++;
         product[productCount]->uploadProduct(getDonorID(),getName());
     }
     else if(productChoice=='e')
     {
         product.push_back(new MentalCounselling);
+        productCount++;
         product[productCount]->uploadProduct(getDonorID(),getName());
     }
 }

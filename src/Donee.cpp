@@ -17,7 +17,7 @@ using std::this_thread::sleep_for;
 
 extern unordered_map<int,long int>id_count;
 long int Donee:: stDoneeID = 14000;
-
+extern int productCount;
 void startMenu();
 void frame(int n);
 using namespace std;
@@ -119,31 +119,36 @@ void Donee::placeOrder()
 {
     Person::productMenu();
     vector<Product*>product2;
-    int productCount=0;
     char productChoice;
     cin>>productChoice;
     if(productChoice=='a')
     {
         product2.push_back(new Money);
+        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='b')
     {
         product2.push_back(new Cloth);
+        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='c')
     {
-
+        product2.push_back(new Book);
+        productCount++;
+        product2[productCount]->placeOrder();
     }
     else if(productChoice=='d')
     {
          product2.push_back(new Blood);
+         productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='e')
     {
          product2.push_back(new MentalCounselling);
+         productCount++;
         product2[productCount]->placeOrder();
     }
 }

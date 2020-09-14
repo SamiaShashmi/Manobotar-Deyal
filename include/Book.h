@@ -3,14 +3,18 @@
 #include"Product.h"
 #include<bits/stdc++.h>
 
-class Book
+class Book:public Product
 {
     public:
         Book();
+        void uploadProduct(long int id,string name);
+        void placeOrder();
+        void showBookList();
 
     protected:
 
     private:
+        Date d;
 };
 
 #endif // BOOK_H

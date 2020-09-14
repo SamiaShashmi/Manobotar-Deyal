@@ -124,26 +124,31 @@ void Donee::placeOrder()
     if(productChoice=='a')
     {
         product2.push_back(new Money);
+        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='b')
     {
         product2.push_back(new Cloth);
+        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='c')
     {
         product2.push_back(new Book);
+        productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='d')
     {
          product2.push_back(new Blood);
+         productCount++;
         product2[productCount]->placeOrder();
     }
     else if(productChoice=='e')
     {
          product2.push_back(new MentalCounselling);
+         productCount++;
         product2[productCount]->placeOrder();
     }
 }
@@ -165,7 +170,7 @@ void Donee::viewDoneeList()
     cout << setw(5) << "ID" << setw(35) << "Name" << setw(7) << "Age" << setw(35) << "Email" <<endl;
     frame(82);
     while (getline(fin,em)) {
-cout << em << endl ;
+    cout << em << endl ;
 }
     fin.close();
 }
@@ -218,6 +223,56 @@ void Donee::displayProduct()
             }
             fclothin.close();
         }
+    }
+    if(option=='c')
+    {
+        int ss;
+        string line;
+        cout<<"Book genre : \n1.Novel\n2.Poetry\n3.Comics\n4.Others"<<endl;
+        cin >> ss;
+
+        cout << "Donation Details:" << endl;
+        frame(98);
+        cout <<setw(5) << " Book Name" << setw(10) << "Amount" << setw(36) << "Type of Donation" << setw(12) << "Donors' ID" << setw(35)<< "Donors' Name" << endl;
+        frame(98);
+
+        if(ss==1)
+        {
+            ifstream fbookin("NovelDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==2)
+        {
+            ifstream fbookin("PoetryDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==3)
+        {
+            ifstream fbookin("ComicsDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+        else if(ss==4)
+        {
+            ifstream fbookin("OthersDetails.txt");
+            while(getline(fbookin,line))
+            {
+                cout << line << endl;
+            }
+            fbookin.close();
+        }
+
     }
     if(option=='d')
     {

@@ -163,7 +163,9 @@ void Menu(int donorOrDonee)
             {
                 system("cls");
                 cout<<"Login successful...\n\n\n";
-                person[count]->submenu();
+                Donor d;
+                d.submenu();
+                //person[count]->submenu();
             }
             else if(pass!=passCheck)
             {
@@ -196,8 +198,10 @@ void Menu(int donorOrDonee)
             if(pass==passCheck)
             {
                 system("cls");
-                cout<<"Login successful...\n";
-                person[count]->submenu();
+                cout<<"Login successful...\n\n\n";
+                Donee d;
+                d.submenu();
+                //person[count]->submenu();
             }
             else if(pass!=passCheck)
             {
